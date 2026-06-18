@@ -1,0 +1,649 @@
+<!DOCTYPE html>
+<html lang="en" class="dark">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Crystal Mosaic - Immersive Workshops</title>
+  <meta name="description" content="Join our immersive stained glass workshops, private group events, and seasonal masterclasses.">
+  <script src="tailwind.js"></script>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  
+  <script>
+    tailwind.config = { 
+      darkMode: 'class',
+      theme: {
+        extend: {
+          colors: {
+            'lead': '#0F172A', 
+            'amber': '#F59E0B',
+            'light-bg': '#FFFFFF',
+            'light-surface': '#F8FAFC'
+          }
+        }
+      }
+    }
+  </script>
+
+  <style>
+    [dir="rtl"] { direction: rtl; }
+    
+    @keyframes fadeInUp {
+      from { opacity: 0; transform: translateY(30px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+    .animate-fade-in { animation: fadeInUp 0.8s ease-out; }
+
+    .hide-scroll::-webkit-scrollbar { display: none; }
+    .hide-scroll { -ms-overflow-style: none; scrollbar-width: none; }
+  </style>
+  <link rel="icon" type="image/svg+xml" href="assets/favicon.svg">
+</head>
+<body class="font-sans antialiased transition-colors duration-300 bg-light-bg dark:bg-lead text-black dark:text-white flex flex-col min-h-screen overflow-x-hidden w-full">
+
+  <!-- FLOATING GLASS NAVBAR -->
+  <div class="fixed top-4 left-0 right-0 z-50 px-4 sm:px-6 lg:px-8 flex justify-center pointer-events-none">
+    <nav class="w-full max-w-[1600px] bg-light-bg/80 dark:bg-lead/80 backdrop-blur-lg border border-gray-200 dark:border-amber/30 rounded-2xl lg:rounded-full shadow-2xl transition-colors duration-300 pointer-events-auto relative">
+      <div class="flex justify-between items-center h-[80px] px-8 xl:px-10">
+
+        <!-- Logo -->
+        <div class="flex-shrink-0 pr-2 xl:pr-4">
+          <a href="index.html" class="flex items-center gap-3">
+            <div class="flex flex-col">
+              <span class="text-lg xl:text-2xl font-semibold tracking-widest text-lead dark:text-white uppercase">Crystal<span class="text-amber">Mosaic</span></span>
+            </div>
+          </a>
+        </div>
+
+        <!-- Desktop Menu -->
+        <div class="hidden lg:flex items-center justify-center flex-1">
+          <div class="flex items-center gap-0.5 xl:gap-2">
+
+            <!-- Home Dropdown -->
+            <div class="relative group h-[80px] flex items-center">
+              <a href="index.html" class="text-[9px] xl:text-[10px] uppercase tracking-[0.15em] font-medium text-lead dark:text-white hover:text-amber dark:hover:text-amber transition-colors flex items-center relative px-1.5 xl:px-3 py-2 rounded-full hover:bg-gray-100 dark:hover:bg-amber/10 whitespace-nowrap">
+                <span>Home</span>
+                <i class="fas fa-chevron-down text-[8px] ms-1.5 transition-transform duration-300 group-hover:rotate-180"></i>
+              </a>
+              <div class="absolute top-[70px] start-0 w-48 bg-light-bg dark:bg-lead border border-gray-200 dark:border-amber/20 shadow-2xl rounded-xl opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-300 z-50 overflow-hidden">
+                <div class="py-2 flex flex-col">
+                  <a href="index.html" class="px-6 py-3 text-xs font-medium text-lead dark:text-white hover:text-black hover:bg-amber dark:hover:text-black transition-colors">HOME PAGE 01</a>
+                  <a href="home-2.html" class="px-6 py-3 text-xs font-medium text-lead dark:text-white hover:text-black hover:bg-amber dark:hover:text-black transition-colors">HOME PAGE 02</a>
+                </div>
+              </div>
+            </div>
+
+            <!-- Standard Links (Commission Removed) -->
+            <a href="about.html" class="text-[9px] xl:text-[10px] uppercase tracking-[0.15em] font-medium text-lead dark:text-white hover:text-amber dark:hover:text-amber transition-colors whitespace-nowrap px-1.5 xl:px-3 py-2 rounded-full hover:bg-gray-100 dark:hover:bg-amber/10">About</a>
+            <a href="gallery.html" class="text-[9px] xl:text-[10px] uppercase tracking-[0.15em] font-medium text-lead dark:text-white hover:text-amber dark:hover:text-amber transition-colors whitespace-nowrap px-1.5 xl:px-3 py-2 rounded-full hover:bg-gray-100 dark:hover:bg-amber/10">Gallery</a>
+            <a href="product.html" class="text-[9px] xl:text-[10px] uppercase tracking-[0.15em] font-medium text-lead dark:text-white hover:text-amber dark:hover:text-amber transition-colors whitespace-nowrap px-1.5 xl:px-3 py-2 rounded-full hover:bg-gray-100 dark:hover:bg-amber/10">Product</a>
+            <a href="restoration.html" class="text-[9px] xl:text-[10px] uppercase tracking-[0.15em] font-medium text-lead dark:text-white hover:text-amber dark:hover:text-amber transition-colors whitespace-nowrap px-1.5 xl:px-3 py-2 rounded-full hover:bg-gray-100 dark:hover:bg-amber/10">Restoration</a>
+            <a href="classes.html" class="text-[9px] xl:text-[10px] uppercase tracking-[0.15em] font-medium text-lead dark:text-white hover:text-amber dark:hover:text-amber transition-colors whitespace-nowrap px-1.5 xl:px-3 py-2 rounded-full hover:bg-gray-100 dark:hover:bg-amber/10">Classes</a>
+            
+            <!-- ACTIVE HIGHLIGHT FOR WORKSHOP -->
+            <a href="workshop.html" class="text-[9px] xl:text-[10px] uppercase tracking-[0.15em] font-semibold text-amber bg-gray-100 dark:bg-amber/10 transition-colors whitespace-nowrap px-1.5 xl:px-3 py-2 rounded-full">Workshop</a>
+            
+            <a href="faq.html" class="text-[9px] xl:text-[10px] uppercase tracking-[0.15em] font-medium text-lead dark:text-white hover:text-amber dark:hover:text-amber transition-colors whitespace-nowrap px-1.5 xl:px-3 py-2 rounded-full hover:bg-gray-100 dark:hover:bg-amber/10">FAQ</a>
+            <a href="pricing.html" class="text-[9px] xl:text-[10px] uppercase tracking-[0.15em] font-medium text-lead dark:text-white hover:text-amber dark:hover:text-amber transition-colors whitespace-nowrap px-1.5 xl:px-3 py-2 rounded-full hover:bg-gray-100 dark:hover:bg-amber/10">Pricing</a>
+            <a href="contact.html" class="text-[9px] xl:text-[10px] uppercase tracking-[0.15em] font-medium text-lead dark:text-white hover:text-amber dark:hover:text-amber transition-colors whitespace-nowrap px-1.5 xl:px-3 py-2 rounded-full hover:bg-gray-100 dark:hover:bg-amber/10">Contact</a>
+          </div>
+        </div>
+
+        <!-- Desktop Actions & Toggles -->
+        <div class="hidden lg:flex items-center gap-1.5 xl:gap-3 flex-shrink-0">
+          <a href="login.html" class="border border-gray-300 dark:border-gray-600 text-lead dark:text-white hover:border-amber hover:text-amber px-4 xl:px-5 py-1.5 xl:py-2 rounded-full text-[9px] xl:text-[10px] uppercase tracking-wider font-medium transition-all duration-300">Login</a>
+          <a href="register.html" class="bg-amber text-black hover:bg-lead hover:text-white dark:hover:bg-white dark:hover:text-black px-4 xl:px-5 py-2 xl:py-2.5 rounded-full text-[9px] xl:text-[10px] uppercase tracking-wider font-medium transition-all duration-300">
+            Register
+          </a>
+
+          <div class="h-6 w-px bg-gray-300 dark:bg-gray-700 mx-1"></div>
+
+          <!-- Theme Toggle -->
+          <button id="theme-toggle" class="relative w-[56px] xl:w-[64px] h-[26px] xl:h-[30px] flex items-center bg-gray-200 dark:bg-[#1E293B] rounded-full p-1 transition-colors duration-300 focus:outline-none border border-gray-300 dark:border-gray-700 overflow-hidden" title="Toggle Theme">
+            <span class="text-[7px] xl:text-[8px] font-medium text-gray-500 absolute end-2.5 dark:opacity-0 transition-opacity duration-300 tracking-wider">LGT</span>
+            <span class="text-[7px] xl:text-[8px] font-medium text-amber absolute start-2.5 opacity-0 dark:opacity-100 transition-opacity duration-300 tracking-wider">DRK</span>
+            
+            <div class="w-[18px] xl:w-[20px] h-[18px] xl:h-[20px] bg-white dark:bg-lead border border-gray-200 dark:border-amber/50 rounded-full shadow-sm transform transition-transform duration-300 flex items-center justify-center rtl:dark:-translate-x-[30px] xl:rtl:dark:-translate-x-[34px] ltr:dark:translate-x-[30px] xl:ltr:dark:translate-x-[34px] dark:translate-x-[30px] xl:dark:translate-x-[34px] z-10">
+              <i class="fas fa-sun text-[8px] xl:text-[9px] text-amber dark:hidden block"></i>
+              <i class="fas fa-moon text-[8px] xl:text-[9px] text-amber hidden dark:block"></i>
+            </div>
+          </button>
+          
+          <!-- RTL Toggle -->
+          <button id="rtl-toggle" class="text-[9px] xl:text-[10px] font-medium text-gray-500 hover:text-amber transition-colors duration-300 px-2 py-1 rounded-full hover:bg-gray-100 dark:hover:bg-amber/10" title="Toggle RTL">
+            RTL
+          </button>
+        </div>
+
+        <!-- Mobile Menu Button -->
+        <div class="lg:hidden flex items-center">
+          <button id="mobile-menu-button" class="text-lead dark:text-white hover:text-amber focus:outline-none transition duration-300 bg-gray-100 dark:bg-amber/10 p-2 rounded-full">
+            <svg class="h-6 w-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path id="menu-icon" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"></path>
+              <path id="close-icon" class="hidden" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"></path>
+            </svg>
+          </button>
+        </div>
+
+      </div>
+
+      <!-- Mobile Menu Dropdown -->
+      <div id="mobile-menu" class="hidden lg:hidden absolute top-[90px] left-0 right-0 bg-light-bg dark:bg-lead border border-gray-200 dark:border-amber/20 shadow-2xl rounded-2xl transition-colors duration-300 overflow-hidden">
+        <div class="px-6 pt-4 pb-8 flex flex-col gap-0 max-h-[calc(100vh-120px)] overflow-y-auto hide-scroll">
+
+          <!-- Mobile Home Dropdown -->
+          <div class="border-b border-gray-200 dark:border-white/10 flex flex-col">
+            <div class="w-full flex items-center justify-between py-4">
+              <a href="index.html" class="text-xs uppercase tracking-widest font-medium text-lead dark:text-white hover:text-amber transition duration-300">Home</a>
+              <button id="mobile-home-dropdown" class="p-2 -mr-2 text-amber focus:outline-none">
+                <i class="fas fa-plus text-xs" id="mobile-home-icon"></i>
+              </button>
+            </div>
+            <div id="mobile-home-menu" class="hidden pb-4 flex flex-col gap-3 ps-4 border-s-2 border-amber ms-2">
+              <a href="index.html" class="block text-xs font-medium text-gray-600 dark:text-white/70 hover:text-amber transition duration-300 uppercase tracking-wider">Home 1</a>
+              <a href="home-2.html" class="block text-xs font-medium text-gray-600 dark:text-white/70 hover:text-amber transition duration-300 uppercase tracking-wider">Home 2</a>
+            </div>
+          </div>
+
+          <!-- Mobile Links (Workshop Highlighted) -->
+          <a href="about.html" class="block py-4 border-b border-gray-200 dark:border-white/10 text-lead dark:text-white hover:text-amber transition duration-300 text-xs uppercase tracking-widest font-medium">About</a>
+          <a href="gallery.html" class="block py-4 border-b border-gray-200 dark:border-white/10 text-lead dark:text-white hover:text-amber transition duration-300 text-xs uppercase tracking-widest font-medium">Gallery</a>
+          <a href="product.html" class="block py-4 border-b border-gray-200 dark:border-white/10 text-lead dark:text-white hover:text-amber transition duration-300 text-xs uppercase tracking-widest font-medium">Product</a>
+          <a href="restoration.html" class="block py-4 border-b border-gray-200 dark:border-white/10 text-lead dark:text-white hover:text-amber transition duration-300 text-xs uppercase tracking-widest font-medium">Restoration</a>
+          <a href="classes.html" class="block py-4 border-b border-gray-200 dark:border-white/10 text-lead dark:text-white hover:text-amber transition duration-300 text-xs uppercase tracking-widest font-medium">Classes</a>
+          <a href="workshop.html" class="block py-4 border-b border-gray-200 dark:border-white/10 text-amber transition duration-300 text-xs uppercase tracking-widest font-semibold">Workshop</a>
+          <a href="faq.html" class="block py-4 border-b border-gray-200 dark:border-white/10 text-lead dark:text-white hover:text-amber transition duration-300 text-xs uppercase tracking-widest font-medium">FAQ</a>
+          <a href="pricing.html" class="block py-4 border-b border-gray-200 dark:border-white/10 text-lead dark:text-white hover:text-amber transition duration-300 text-xs uppercase tracking-widest font-medium">Pricing</a>
+          <a href="contact.html" class="block py-4 border-b border-gray-200 dark:border-white/10 text-lead dark:text-white hover:text-amber transition duration-300 text-xs uppercase tracking-widest font-medium">Contact</a>
+
+          <!-- Mobile Auth & Toggles -->
+          <div class="pt-6 flex flex-col gap-4">
+            <a href="login.html" class="flex items-center justify-center w-full bg-transparent border-2 border-lead dark:border-white text-lead dark:text-white hover:border-amber hover:text-amber dark:hover:border-amber dark:hover:text-amber px-4 py-3 rounded-full font-medium uppercase tracking-widest text-xs transition duration-300">
+              Login
+            </a>
+            <a href="register.html" class="flex items-center justify-center w-full bg-amber text-black hover:bg-lead hover:text-white dark:hover:bg-white dark:hover:text-black px-4 py-3 rounded-full font-medium uppercase tracking-widest text-xs transition duration-300">
+              Register
+            </a>
+            
+            <div class="flex justify-between items-center pt-6 pb-2 border-t border-gray-200 dark:border-white/10 mt-2">
+              <button id="mobile-theme-toggle" class="bg-gray-100 dark:bg-[#1a1a1a] border border-gray-300 dark:border-gray-700 rounded-full px-4 py-2 transition-colors flex items-center text-xs font-medium uppercase tracking-widest">
+                <span class="dark:hidden flex items-center text-amber"><i class="fas fa-sun me-2"></i> Light Mode</span>
+                <span class="hidden dark:flex items-center text-amber"><i class="fas fa-moon me-2"></i> Dark Mode</span>
+              </button>
+              <button id="mobile-rtl-toggle" class="text-gray-500 dark:text-gray-400 hover:text-amber transition-colors flex items-center text-xs font-medium uppercase tracking-widest">
+                <i class="fas fa-language me-2 text-lg"></i> RTL
+              </button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </nav>
+  </div>
+
+  <main class="flex-grow flex flex-col pt-[100px]">
+    
+    <!-- SECTION 1: Workshop Hero -->
+    <section class="relative py-24 flex flex-col items-center justify-center overflow-hidden bg-light-surface dark:bg-lead border-b border-gray-200 dark:border-amber/20 transition-colors duration-300 min-h-[60vh]">
+      <div class="absolute inset-0 bg-[url('assets/workshop_hero.png')] bg-cover bg-center opacity-70 dark:opacity-50 z-0"></div>
+      <div class="absolute inset-0 bg-black/10 dark:bg-black/35 z-10"></div>
+
+      <div class="max-w-4xl mx-auto px-4 relative z-20 w-full text-center">
+        <div class="animate-fade-in w-full bg-white/80 dark:bg-lead/80 backdrop-blur-md rounded-3xl md:rounded-[2.5rem] p-6 sm:p-8 md:p-12 border border-gray-200/50 dark:border-amber/30 shadow-2xl max-w-3xl mx-auto">
+          <p class="text-amber uppercase tracking-[0.3em] text-sm font-semibold mb-4">Learn The Art</p>
+          <h1 class="text-4xl md:text-5xl font-semibold leading-tight tracking-tight text-black dark:text-white mb-6">
+            STUDIO <span class="text-amber">WORKSHOPS</span>
+          </h1>
+          <p class="text-base md:text-lg text-gray-700 dark:text-white/80 leading-relaxed font-semibold mx-auto max-w-2xl">
+            A glimpse into our creative sanctuary, where raw materials are transformed. Join us for scheduled events or private groups.
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <!-- SECTION 2: Types of Workshops -->
+    <section class="py-24 bg-light-bg dark:bg-lead border-b border-gray-200 dark:border-amber/20 transition-colors duration-300">
+      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        
+        <div class="text-center mb-16">
+          <h2 class="text-3xl md:text-4xl font-semibold text-black dark:text-white tracking-tight mb-4">
+            Ways To <span class="text-amber">Experience</span> The Studio
+          </h2>
+          <div class="w-24 h-1 bg-amber mx-auto rounded-full"></div>
+        </div>
+        
+        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+          <!-- Type 1 -->
+          <div class="bg-light-surface dark:bg-[#1E293B] border border-gray-200 dark:border-amber/20 rounded-3xl overflow-hidden group transition-colors duration-300 flex flex-col">
+            <div class="aspect-[4/3] overflow-hidden relative">
+              <img src="assets/workshop_studio.png" alt="Private Groups" class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105">
+              <div class="absolute inset-0 bg-gradient-to-t from-lead/80 to-transparent"></div>
+              <h3 class="absolute bottom-6 left-6 text-2xl font-semibold text-white">Private Groups</h3>
+            </div>
+            <div class="p-8 flex flex-col flex-grow">
+              <p class="text-gray-600 dark:text-white/70 text-sm leading-relaxed font-medium mb-6">
+                Perfect for team-building, bachelorette parties, or family gatherings. Book the entire studio for a private 3-hour session where everyone leaves with a finished piece.
+              </p>
+              <a href="#booking-form" class="mt-auto inline-flex items-center text-amber font-semibold uppercase tracking-widest text-xs hover:text-black dark:hover:text-white transition-colors">
+                Request a Date <i class="fas fa-arrow-right ms-2"></i>
+              </a>
+            </div>
+          </div>
+
+          <!-- Type 2 -->
+          <div class="bg-light-surface dark:bg-[#1E293B] border border-gray-200 dark:border-amber/20 rounded-3xl overflow-hidden group transition-colors duration-300 flex flex-col">
+            <div class="aspect-[4/3] overflow-hidden relative">
+              <img src="assets/workshop_founder.png" alt="Masterclasses" class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105">
+              <div class="absolute inset-0 bg-gradient-to-t from-lead/80 to-transparent"></div>
+              <h3 class="absolute bottom-6 left-6 text-2xl font-semibold text-white">Masterclasses</h3>
+            </div>
+            <div class="p-8 flex flex-col flex-grow">
+              <p class="text-gray-600 dark:text-white/70 text-sm leading-relaxed font-medium mb-6">
+                Intensive, single-skill focus days for intermediate artists. Deep dive into specialized techniques like glass painting, intricate lead came bending, or advanced soldering.
+              </p>
+              <a href="#upcoming" class="mt-auto inline-flex items-center text-amber font-semibold uppercase tracking-widest text-xs hover:text-black dark:hover:text-white transition-colors">
+                View Schedule <i class="fas fa-arrow-right ms-2"></i>
+              </a>
+            </div>
+          </div>
+
+          <!-- Type 3 -->
+          <div class="bg-light-surface dark:bg-[#1E293B] border border-gray-200 dark:border-amber/20 rounded-3xl overflow-hidden group transition-colors duration-300 flex flex-col md:col-span-2 lg:col-span-1">
+            <div class="aspect-[4/3] overflow-hidden relative">
+              <img src="assets/workshop_floral.png" alt="Seasonal Projects" class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105">
+              <div class="absolute inset-0 bg-gradient-to-t from-lead/80 to-transparent"></div>
+              <h3 class="absolute bottom-6 left-6 text-2xl font-semibold text-white">Seasonal Projects</h3>
+            </div>
+            <div class="p-8 flex flex-col flex-grow">
+              <p class="text-gray-600 dark:text-white/70 text-sm leading-relaxed font-medium mb-6">
+                Join a public, one-off project day focused on making a specific item—like holiday ornaments, spring terrarium stakes, or autumn leaf suncatchers.
+              </p>
+              <a href="#upcoming" class="mt-auto inline-flex items-center text-amber font-semibold uppercase tracking-widest text-xs hover:text-black dark:hover:text-white transition-colors">
+                View Schedule <i class="fas fa-arrow-right ms-2"></i>
+              </a>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- SECTION 3: The Studio Environment (What's Included) -->
+    <section class="py-24 bg-light-surface dark:bg-lead border-b border-gray-200 dark:border-amber/20 transition-colors duration-300">
+      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="grid lg:grid-cols-2 gap-16 items-center">
+          
+          <div class="order-2 lg:order-1">
+            <h2 class="text-3xl md:text-4xl font-semibold text-black dark:text-white tracking-tight mb-6">
+              A Space Built For <span class="text-amber">Creation</span>
+            </h2>
+            <p class="text-gray-600 dark:text-white/70 text-base font-medium leading-relaxed mb-8">
+              We provide a safe, well-ventilated, and fully equipped studio environment. You don't need to bring anything except your enthusiasm.
+            </p>
+            
+            <ul class="space-y-6">
+              <li class="flex items-start">
+                <div class="w-10 h-10 bg-amber/10 text-amber rounded-full flex items-center justify-center shrink-0 mt-1 border border-amber/20">
+                  <i class="fas fa-glasses"></i>
+                </div>
+                <div class="ml-4">
+                  <h4 class="text-lg font-semibold text-black dark:text-white">Safety First</h4>
+                  <p class="text-gray-600 dark:text-white/60 text-sm font-medium mt-1">Safety glasses, aprons, specialized cutting gloves, and fume extractors are provided for all attendees at every workstation.</p>
+                </div>
+              </li>
+              <li class="flex items-start">
+                <div class="w-10 h-10 bg-amber/10 text-amber rounded-full flex items-center justify-center shrink-0 mt-1 border border-amber/20">
+                  <i class="fas fa-hammer"></i>
+                </div>
+                <div class="ml-4">
+                  <h4 class="text-lg font-semibold text-black dark:text-white">Professional Tools</h4>
+                  <p class="text-gray-600 dark:text-white/60 text-sm font-medium mt-1">Use the same high-end Toyo cutters, Hakko soldering irons, and Gryphon grinders that our master artisans use daily.</p>
+                </div>
+              </li>
+              <li class="flex items-start">
+                <div class="w-10 h-10 bg-amber/10 text-amber rounded-full flex items-center justify-center shrink-0 mt-1 border border-amber/20">
+                  <i class="fas fa-coffee"></i>
+                </div>
+                <div class="ml-4">
+                  <h4 class="text-lg font-semibold text-black dark:text-white">Catered Comforts</h4>
+                  <p class="text-gray-600 dark:text-white/60 text-sm font-medium mt-1">For full-day retreats and masterclasses, we provide artisan coffee, tea, pastries, and a catered lunch from local cafes.</p>
+                </div>
+              </li>
+            </ul>
+          </div>
+
+          <div class="order-1 lg:order-2 relative">
+            <div class="aspect-[4/5] rounded-[3rem] overflow-hidden shadow-2xl border border-gray-200 dark:border-white/10">
+              <img src="assets/workshop_group_event.png" alt="Workshop tools and glass" class="w-full h-full object-cover">
+            </div>
+            <div class="absolute -bottom-8 -left-8 w-48 h-48 bg-amber/20 rounded-full blur-3xl z-0"></div>
+          </div>
+
+        </div>
+      </div>
+    </section>
+
+    <!-- SECTION 4: Upcoming Events List -->
+    <section id="upcoming" class="py-24 bg-light-bg dark:bg-lead border-b border-gray-200 dark:border-amber/20 transition-colors duration-300">
+      <div class="max-w-[1600px] mx-auto px-4 sm:px-6 lg:px-8">
+        
+        <div class="text-center mb-16">
+          <p class="text-amber uppercase tracking-[0.2em] text-xs font-semibold mb-3">Reserve Your Spot</p>
+          <h2 class="text-3xl md:text-4xl font-semibold text-black dark:text-white tracking-tight">
+            Upcoming <span class="text-amber">Workshops</span>
+          </h2>
+        </div>
+
+        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+          
+          <!-- Event 1 -->
+          <div class="border border-gray-200 dark:border-white/10 rounded-3xl p-8 bg-light-surface dark:bg-[#1E293B] hover:border-amber dark:hover:border-amber transition-all duration-300 flex flex-col h-full relative overflow-hidden group">
+            <div class="absolute top-0 right-0 bg-amber text-black text-[10px] font-semibold uppercase tracking-widest px-3 py-1 rounded-bl-xl">Seasonal</div>
+            <div class="text-amber text-xs font-semibold uppercase tracking-widest mb-4">Project Day</div>
+            <h3 class="text-xl font-semibold text-black dark:text-white mb-2">Monstera Leaf Suncatcher</h3>
+            <p class="text-gray-500 text-sm font-medium mb-6">A 4-hour beginner session focused on cutting curves to create a beautiful botanical suncatcher.</p>
+            
+            <div class="mt-auto space-y-4 mb-8 border-t border-gray-200 dark:border-white/10 pt-6">
+              <div class="flex items-center text-sm font-medium text-gray-700 dark:text-white/80"><i class="far fa-calendar text-amber w-6"></i> Sat, Sept 9</div>
+              <div class="flex items-center text-sm font-medium text-gray-700 dark:text-white/80"><i class="far fa-clock text-amber w-6"></i> 10:00 AM - 2:00 PM</div>
+              <div class="flex items-center text-sm font-medium text-gray-700 dark:text-white/80"><i class="fas fa-tag text-amber w-6"></i> $110 (Lunch Included)</div>
+            </div>
+            
+            <button class="w-full py-3 bg-light-bg dark:bg-lead border border-gray-300 dark:border-gray-600 text-black dark:text-white group-hover:bg-amber group-hover:border-amber group-hover:text-black font-medium uppercase tracking-widest text-xs transition-all duration-300 rounded-full">
+              Book Spot
+            </button>
+          </div>
+
+          <!-- Event 2 -->
+          <div class="border border-gray-200 dark:border-white/10 rounded-3xl p-8 bg-light-surface dark:bg-[#1E293B] hover:border-amber dark:hover:border-amber transition-all duration-300 flex flex-col h-full relative overflow-hidden group">
+            <div class="text-amber text-xs font-semibold uppercase tracking-widest mb-4">Masterclass</div>
+            <h3 class="text-xl font-semibold text-black dark:text-white mb-2">Advanced Fusing & Painting</h3>
+            <p class="text-gray-500 text-sm font-medium mb-6">For intermediate artists. Spend the day learning traditional kiln-fired glass painting techniques.</p>
+            
+            <div class="mt-auto space-y-4 mb-8 border-t border-gray-200 dark:border-white/10 pt-6">
+              <div class="flex items-center text-sm font-medium text-gray-700 dark:text-white/80"><i class="far fa-calendar text-amber w-6"></i> Sun, Sept 17</div>
+              <div class="flex items-center text-sm font-medium text-gray-700 dark:text-white/80"><i class="far fa-clock text-amber w-6"></i> 9:00 AM - 5:00 PM</div>
+              <div class="flex items-center text-sm font-medium text-gray-700 dark:text-white/80"><i class="fas fa-tag text-amber w-6"></i> $250 (Materials & Lunch Incl.)</div>
+            </div>
+            
+            <button class="w-full py-3 bg-light-bg dark:bg-lead border border-gray-300 dark:border-gray-600 text-black dark:text-white group-hover:bg-amber group-hover:border-amber group-hover:text-black font-medium uppercase tracking-widest text-xs transition-all duration-300 rounded-full">
+              Book Spot
+            </button>
+          </div>
+
+          <!-- Event 3 -->
+          <div class="border border-gray-200 dark:border-white/10 rounded-3xl p-8 bg-light-surface dark:bg-[#1E293B] hover:border-amber dark:hover:border-amber transition-all duration-300 flex flex-col h-full relative overflow-hidden group md:col-span-2 lg:col-span-1">
+             <div class="absolute top-0 right-0 bg-gray-200 text-gray-600 text-[10px] font-semibold uppercase tracking-widest px-3 py-1 rounded-bl-xl">Sold Out</div>
+            <div class="text-amber text-xs font-semibold uppercase tracking-widest mb-4">Seasonal</div>
+            <h3 class="text-xl font-semibold text-gray-400 dark:text-gray-500 mb-2">Holiday Ornament Retreat</h3>
+            <p class="text-gray-400 dark:text-gray-600 text-sm font-medium mb-6">Create three distinct glass ornaments ready for the holiday season.</p>
+            
+            <div class="mt-auto space-y-4 mb-8 border-t border-gray-200 dark:border-white/10 pt-6 opacity-60">
+              <div class="flex items-center text-sm font-medium text-gray-500"><i class="far fa-calendar text-gray-500 w-6"></i> Sat, Nov 04</div>
+              <div class="flex items-center text-sm font-medium text-gray-500"><i class="far fa-clock text-gray-500 w-6"></i> 10:00 AM - 3:00 PM</div>
+              <div class="flex items-center text-sm font-medium text-gray-500"><i class="fas fa-tag text-gray-500 w-6"></i> $135 (Materials Incl.)</div>
+            </div>
+            
+            <button class="w-full py-3 bg-gray-100 dark:bg-lead border border-gray-200 dark:border-gray-700 text-gray-500 font-medium uppercase tracking-widest text-xs transition-all duration-300 rounded-full cursor-not-allowed">
+              Waitlist
+            </button>
+          </div>
+
+        </div>
+      </div>
+    </section>
+
+    <!-- SECTION 5: Workshop Atmosphere (Gallery) -->
+    <section class="py-24 bg-light-surface dark:bg-lead transition-colors duration-300 border-b border-gray-200 dark:border-amber/20">
+      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+        <h2 class="text-3xl md:text-4xl font-semibold text-black dark:text-white tracking-tight mb-4">
+          Inside The <span class="text-amber">Atmosphere</span>
+        </h2>
+        <p class="text-gray-600 dark:text-white/70 max-w-xl mx-auto text-sm font-medium mb-16">
+          Our workshops are about more than just making art—they are about connecting with others, sharing ideas, and enjoying the therapeutic process of working with your hands.
+        </p>
+        
+        <div class="grid grid-cols-2 lg:grid-cols-3 gap-4">
+          <div class="aspect-square overflow-hidden rounded-3xl">
+            <img src="assets/workshop_atmos_studio.png" alt="Students laughing" class="w-full h-full object-cover hover:scale-105 transition-transform duration-700">
+          </div>
+          <div class="aspect-square overflow-hidden rounded-3xl">
+            <img src="assets/workshop_atmos_tools.png" alt="Focusing on cut" class="w-full h-full object-cover hover:scale-105 transition-transform duration-700">
+          </div>
+          <div class="aspect-square overflow-hidden rounded-3xl hidden lg:block">
+            <img src="assets/workshop_atmos_floral.png" alt="Displaying finished piece" class="w-full h-full object-cover hover:scale-105 transition-transform duration-700">
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- SECTION 6: Private Event Booking Form -->
+    <section id="booking-form" class="py-24 bg-light-bg dark:bg-lead transition-colors duration-300">
+      <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="border-2 border-amber p-6 sm:p-10 md:p-16 relative overflow-hidden bg-amber/5 shadow-2xl rounded-[3rem]">
+          
+          <div class="text-center mb-10 relative z-10">
+            <h2 class="text-3xl font-semibold text-black dark:text-white tracking-tight mb-4">
+              Book a <span class="text-amber">Private Workshop</span>
+            </h2>
+            <p class="text-gray-600 dark:text-white/70 max-w-xl mx-auto font-medium text-sm">
+              Gather your friends, family, or colleagues for a private glass-making experience. Let us know your group size and preferred dates, and we'll handle the rest.
+            </p>
+          </div>
+
+          <form class="relative z-10 flex flex-col gap-6">
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+              <div>
+                <label class="block text-black dark:text-white text-xs font-semibold uppercase tracking-wider mb-2">Organizer Name</label>
+                <input type="text" class="w-full px-4 py-3 bg-white dark:bg-lead border border-gray-300 dark:border-gray-700 rounded-xl focus:outline-none focus:border-amber text-black dark:text-white text-sm font-medium" placeholder="Jane Smith">
+              </div>
+              <div>
+                <label class="block text-black dark:text-white text-xs font-semibold uppercase tracking-wider mb-2">Email Address</label>
+                <input type="email" class="w-full px-4 py-3 bg-white dark:bg-lead border border-gray-300 dark:border-gray-700 rounded-xl focus:outline-none focus:border-amber text-black dark:text-white text-sm font-medium" placeholder="jane@example.com">
+              </div>
+            </div>
+            
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+              <div>
+                <label class="block text-black dark:text-white text-xs font-semibold uppercase tracking-wider mb-2">Group Size (4-8 people)</label>
+                <select class="w-full px-4 py-3 bg-white dark:bg-lead border border-gray-300 dark:border-gray-700 rounded-xl focus:outline-none focus:border-amber text-black dark:text-white text-sm font-medium">
+                  <option value="4">4 People</option>
+                  <option value="5">5 People</option>
+                  <option value="6">6 People</option>
+                  <option value="7">7 People</option>
+                  <option value="8">8 People (Max)</option>
+                </select>
+              </div>
+              <div>
+                <label class="block text-black dark:text-white text-xs font-semibold uppercase tracking-wider mb-2">Event Type</label>
+                <select class="w-full px-4 py-3 bg-white dark:bg-lead border border-gray-300 dark:border-gray-700 rounded-xl focus:outline-none focus:border-amber text-black dark:text-white text-sm font-medium">
+                  <option value="team">Team Building</option>
+                  <option value="party">Bachelorette / Party</option>
+                  <option value="family">Family Gathering</option>
+                  <option value="other">Other</option>
+                </select>
+              </div>
+            </div>
+
+            <div>
+              <label class="block text-black dark:text-white text-xs font-semibold uppercase tracking-wider mb-2">Preferred Dates / Message</label>
+              <textarea rows="3" class="w-full px-4 py-3 bg-white dark:bg-lead border border-gray-300 dark:border-gray-700 rounded-xl focus:outline-none focus:border-amber text-black dark:text-white text-sm font-medium" placeholder="Let us know when you'd like to visit and any special requests..."></textarea>
+            </div>
+
+            <div class="mt-4 text-center">
+              <button type="submit" class="px-10 py-4 bg-amber text-black hover:bg-lead hover:text-white dark:hover:bg-white dark:hover:text-black font-semibold uppercase tracking-widest text-xs transition-colors duration-300 rounded-full w-full sm:w-auto">
+                Request Booking
+              </button>
+            </div>
+          </form>
+
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+  <!-- FOOTER -->
+  <footer class="bg-lead text-white pt-24 pb-12 mt-auto border-t border-amber/30">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      
+      <div class="grid md:grid-cols-2 lg:grid-cols-4 gap-12 mb-16">
+        
+        <!-- Column 1: Logo & Info -->
+        <div>
+          <h3 class="text-3xl font-semibold tracking-widest uppercase mb-6 text-white">Crystal<span class="text-amber">Mosaic</span></h3>
+          <p class="text-white/70 mb-8 font-medium leading-relaxed text-sm">
+            Preserving history and creating luminous art through master stained glass restoration and professional studio workshops.
+          </p>
+          <div class="flex gap-4">
+            <a href="#" class="w-10 h-10 border border-white/20 text-white hover:border-amber hover:text-amber flex items-center justify-center transition-all duration-300 rounded-full">
+              <i class="fab fa-facebook-f text-sm"></i>
+            </a>
+            <a href="#" class="w-10 h-10 border border-white/20 text-white hover:border-amber hover:text-amber flex items-center justify-center transition-all duration-300 rounded-full">
+              <i class="fab fa-instagram text-sm"></i>
+            </a>
+            <a href="#" class="w-10 h-10 border border-white/20 text-white hover:border-amber hover:text-amber flex items-center justify-center transition-all duration-300 rounded-full">
+              <i class="fab fa-pinterest-p text-sm"></i>
+            </a>
+          </div>
+        </div>
+
+        <!-- Column 2: Quick Links -->
+        <div>
+          <h4 class="text-sm uppercase tracking-[0.2em] font-semibold mb-8 text-white">Quick Links</h4>
+          <ul class="flex flex-col gap-5">
+            <li><a href="index.html" class="text-sm text-white/70 hover:text-amber transition-colors duration-300 font-medium uppercase tracking-wider">Home</a></li>
+            <li><a href="about.html" class="text-sm text-white/70 hover:text-amber transition-colors duration-300 font-medium uppercase tracking-wider">About Studio</a></li>
+            <li><a href="gallery.html" class="text-sm text-white/70 hover:text-amber transition-colors duration-300 font-medium uppercase tracking-wider">Art Gallery</a></li>
+            <li><a href="product.html" class="text-sm text-white/70 hover:text-amber transition-colors duration-300 font-medium uppercase tracking-wider">Suncatcher Shop</a></li>
+            <li><a href="faq.html" class="text-sm text-white/70 hover:text-amber transition-colors duration-300 font-medium uppercase tracking-wider">FAQ</a></li>
+          </ul>
+        </div>
+
+        <!-- Column 3: Services (Commission Removed) -->
+        <div>
+          <h4 class="text-sm uppercase tracking-[0.2em] font-semibold mb-8 text-white">Our Services</h4>
+          <ul class="flex flex-col gap-5">
+            <li><a href="restoration.html" class="text-sm text-white/70 hover:text-amber transition-colors duration-300 font-medium uppercase tracking-wider">Glass Restoration</a></li>
+            <li><a href="classes.html" class="text-sm text-white/70 hover:text-amber transition-colors duration-300 font-medium uppercase tracking-wider">Glass Classes</a></li>
+            <li><a href="workshop.html" class="text-sm text-white/70 hover:text-amber transition-colors duration-300 font-medium uppercase tracking-wider">Studio Workshops</a></li>
+            <li><a href="pricing.html" class="text-sm text-white/70 hover:text-amber transition-colors duration-300 font-medium uppercase tracking-wider">Repair Estimates</a></li>
+          </ul>
+        </div>
+
+        <!-- Column 4: Contact -->
+        <div>
+          <h4 class="text-sm uppercase tracking-[0.2em] font-semibold mb-8 text-white">Contact Us</h4>
+          <ul class="flex flex-col gap-6">
+            <li class="flex items-start">
+              <i class="fas fa-map-marker-alt text-amber mt-1 me-4 text-base"></i>
+              <span class="text-sm text-white/70 font-medium uppercase tracking-wide leading-relaxed">124 Artisan Alley, Creative District</span>
+            </li>
+            <li class="flex items-center">
+              <i class="fas fa-phone text-amber me-4 text-base"></i>
+              <a href="tel:+15551234567" class="text-sm text-white/70 hover:text-amber transition-colors font-medium uppercase tracking-wider">+1 (555) 123-4567</a>
+            </li>
+            <li class="flex items-center">
+              <i class="fas fa-envelope text-amber me-4 text-base"></i>
+              <a href="mailto:hello@crystalmosaic.com" class="text-sm text-white/70 hover:text-amber transition-colors font-medium uppercase tracking-wider">hello@crystalmosaic.com</a>
+            </li>
+          </ul>
+        </div>
+
+      </div>
+
+      <!-- Bottom Bar -->
+      <div class="border-t border-white/10 pt-8 flex flex-col md:flex-row justify-between items-center">
+        <p class="text-white/50 text-xs tracking-widest uppercase mb-4 md:mb-0 font-medium">
+          © 2026 Crystal Mosaic Studio. All rights reserved.
+        </p>
+        <div class="flex gap-6">
+          <a href="login.html" class="text-white/50 hover:text-amber text-xs tracking-widest uppercase font-medium transition-colors duration-300">Client Login</a>
+          <a href="#" class="text-white/50 hover:text-amber text-xs tracking-widest uppercase font-medium transition-colors duration-300">Privacy</a>
+          <a href="#" class="text-white/50 hover:text-amber text-xs tracking-widest uppercase font-medium transition-colors duration-300">Terms</a>
+        </div>
+      </div>
+
+    </div>
+  </footer>
+
+  <script>
+    // Theme Toggle Functionality
+    const themeToggle = document.getElementById('theme-toggle');
+    const mobileThemeToggle = document.getElementById('mobile-theme-toggle');
+    const html = document.documentElement;
+
+    function toggleTheme() {
+      if (html.classList.contains('dark')) {
+        html.classList.remove('dark');
+        localStorage.setItem('theme', 'light');
+      } else {
+        html.classList.add('dark');
+        localStorage.setItem('theme', 'dark');
+      }
+    }
+
+    if (themeToggle) themeToggle.addEventListener('click', toggleTheme);
+    if (mobileThemeToggle) mobileThemeToggle.addEventListener('click', toggleTheme);
+    if (localStorage.getItem('theme') === 'light') html.classList.remove('dark');
+
+    // RTL Toggle Functionality
+    const rtlToggle = document.getElementById('rtl-toggle');
+    const mobileRtlToggle = document.getElementById('mobile-rtl-toggle');
+
+    function toggleRTL() {
+      if (html.getAttribute('dir') === 'rtl') {
+        html.removeAttribute('dir');
+        localStorage.setItem('direction', 'ltr');
+      } else {
+        html.setAttribute('dir', 'rtl');
+        localStorage.setItem('direction', 'rtl');
+      }
+    }
+
+    if (rtlToggle) rtlToggle.addEventListener('click', toggleRTL);
+    if (mobileRtlToggle) mobileRtlToggle.addEventListener('click', toggleRTL);
+    if (localStorage.getItem('direction') === 'rtl') html.setAttribute('dir', 'rtl');
+
+    // Mobile Menu Toggle
+    const mobileMenuButton = document.getElementById('mobile-menu-button');
+    const mobileMenu = document.getElementById('mobile-menu');
+    const menuIcon = document.getElementById('menu-icon');
+    const closeIcon = document.getElementById('close-icon');
+
+    mobileMenuButton.addEventListener('click', () => {
+      mobileMenu.classList.toggle('hidden');
+      menuIcon.classList.toggle('hidden');
+      closeIcon.classList.toggle('hidden');
+      if (!mobileMenu.classList.contains('hidden')) {
+          mobileMenu.classList.add('flex');
+      } else {
+          mobileMenu.classList.remove('flex');
+      }
+    });
+
+    // Mobile Dropdown Functionality
+    function setupMobileDropdown(dropdownId, menuId, iconId) {
+      const dropdownBtn = document.getElementById(dropdownId);   
+      const menu = document.getElementById(menuId);
+      const icon = document.getElementById(iconId);
+      
+      if(dropdownBtn && menu && icon) {
+        dropdownBtn.addEventListener('click', (e) => {
+          e.preventDefault(); 
+          menu.classList.toggle('hidden');
+          if(menu.classList.contains('hidden')) {
+            icon.classList.remove('fa-minus');
+            icon.classList.add('fa-plus');
+            menu.classList.remove('flex');
+          } else {
+            icon.classList.remove('fa-plus');
+            icon.classList.add('fa-minus');
+            menu.classList.add('flex');
+          }
+        });
+      }
+    }
+
+    setupMobileDropdown('mobile-home-dropdown', 'mobile-home-menu', 'mobile-home-icon');
+  </script>
+</body>
+</html>

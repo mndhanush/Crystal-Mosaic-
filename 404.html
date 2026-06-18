@@ -1,0 +1,282 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr" data-theme="dark">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="description" content="Page Not Found - Crystal Mosaic" />
+    <title>404 - Out of Bounds | Crystal Mosaic</title>
+
+    <link rel="icon" type="image/svg+xml" href="assets/favicon.svg" />
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" />
+
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet" />
+
+   <script src="tailwind.js"></script>
+    
+
+    <script>
+        tailwind.config = {
+            darkMode: ['class', '[data-theme="dark"]'],
+            theme: {
+                extend: {
+                    fontFamily: {
+                        sans: ['Inter', 'sans-serif'],
+                    },
+                    colors: {
+                        // Crystal Mosaic Theme Colors
+                        lead: '#0F172A',
+                        amber: '#F59E0B',
+                        cream: '#FFFFFF',
+                        warmgray: '#9CA3AF',
+                        charcoal: '#111827',
+                        'card-dark': '#1A2438',
+                        bg: {
+                            DEFAULT: '#FFFFFF',
+                            alt: '#F8FAFC',
+                            dark: '#0A111F',
+                            'dark-alt': '#0F172A'
+                        }
+                    },
+                    animation: {
+                        'float': 'float 6s infinite ease-in-out',
+                        'fadeInUp': 'fadeInUp 0.8s ease-out',
+                    }
+                }
+            }
+        }
+    </script>
+
+    <style>
+        /* Base Animations */
+        @keyframes float {
+            0%,
+            100% {
+                transform: translateY(0px);
+            }
+            50% {
+                transform: translateY(-20px);
+            }
+        }
+
+        .float-animation {
+            animation: float 4s ease-in-out infinite;
+        }
+
+        @keyframes fadeIn {
+            from {
+                opacity: 0;
+                transform: translateY(30px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        .fade-in {
+            animation: fadeIn 0.8s ease forwards;
+            opacity: 0;
+            animation-fill-mode: forwards;
+        }
+
+        /* Scrollbar */
+        body::-webkit-scrollbar {
+            width: 8px;
+        }
+        body::-webkit-scrollbar-track {
+            background: transparent;
+        }
+        body::-webkit-scrollbar-thumb {
+            background-color: #F59E0B;
+            border-radius: 20px;
+        }
+        .dark body::-webkit-scrollbar-thumb {
+            background-color: #0F172A;
+            border: 1px solid #1A2438;
+        }
+
+        /* Glass shard sparkle */
+        .sparkle {
+            position: relative;
+        }
+        .sparkle::after {
+            content: '';
+            position: absolute;
+            top: -10%;
+            right: -10%;
+            width: 40%;
+            height: 40%;
+            background: radial-gradient(circle, rgba(245, 158, 11, 0.3) 0%, transparent 70%);
+            border-radius: 50%;
+            pointer-events: none;
+            animation: pulseGlow 3s ease-in-out infinite;
+        }
+        @keyframes pulseGlow {
+            0%,
+            100% {
+                transform: scale(1);
+                opacity: 0.5;
+            }
+            50% {
+                transform: scale(1.4);
+                opacity: 1;
+            }
+        }
+    </style>
+</head>
+
+<body class="min-h-screen flex flex-col relative bg-bg dark:bg-bg-dark text-lead dark:text-cream transition-colors duration-300 overflow-x-hidden m-0 p-0 antialiased">
+
+   
+
+    <!-- ===== MAIN CONTENT ===== -->
+    <div class="flex-grow flex items-center justify-center px-4 py-12">
+        <div class="max-w-3xl w-full text-center relative z-10">
+
+            <!-- Logo -->
+            <div class="flex flex-col items-center justify-center mb-6 fade-in" style="animation-delay: 0.1s;">
+                <div class="relative w-16 h-16 bg-lead dark:bg-card-dark rounded-2xl flex items-center justify-center shrink-0 shadow-lg border-2 border-amber overflow-hidden mb-3 sparkle">
+                    <i class="fas fa-gem text-amber text-3xl transform hover:scale-110 transition-transform duration-300"></i>
+                </div>
+                <h3 class="text-2xl font-black text-lead dark:text-cream tracking-tight">Crystal<span class="text-amber">Mosaic</span></h3>
+            </div>
+
+            <!-- 404 Number -->
+            <div class="float-animation fade-in relative py-4" style="animation-delay: 0.2s;">
+                <h1 class="text-[8rem] md:text-[12rem] font-black text-amber/90 leading-none select-none drop-shadow-sm">
+                    404
+                </h1>
+                <!-- Background icon -->
+                <div class="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 text-lead/5 dark:text-cream/5 pointer-events-none z-[-1]">
+                    <i class="fas fa-crystal text-[10rem] md:text-[14rem]"></i>
+                </div>
+            </div>
+
+            <!-- Headline -->
+            <h2 class="text-3xl md:text-5xl font-black mt-2 mb-4 fade-in text-lead dark:text-cream" style="animation-delay: 0.3s;">
+                Out of Bounds!
+            </h2>
+
+            <!-- Description -->
+            <p class="text-lg text-lead dark:text-warmgray mb-10 fade-in max-w-md mx-auto leading-relaxed font-medium" style="animation-delay: 0.4s;">
+                The stained glass panel you're looking for seems to have shattered. It might have moved to a different gallery or been restored elsewhere.
+            </p>
+
+            <!-- Buttons -->
+            <div class="flex flex-col sm:flex-row items-center justify-center gap-4 fade-in" style="animation-delay: 0.5s;">
+                <a href="index.html" class="w-full sm:w-auto inline-flex items-center justify-center gap-3 bg-amber hover:bg-lead hover:text-white dark:hover:bg-cream dark:hover:text-lead text-black font-bold px-8 py-3.5 rounded-xl transition-all transform hover:-translate-y-1 shadow-xl hover:shadow-2xl text-sm border border-transparent">
+                    <i class="fas fa-home"></i>
+                    <span>Return to Gallery</span>
+                </a>
+
+                <a href="contact.html" class="w-full sm:w-auto inline-flex items-center justify-center gap-3 bg-bg-alt dark:bg-card-dark hover:bg-gray-200 dark:hover:bg-lead text-lead dark:text-cream font-bold px-8 py-3.5 rounded-xl transition-all transform hover:-translate-y-1 shadow-lg border border-gray-300 dark:border-gray-800 text-sm group">
+                    <i class="fas fa-headset text-amber group-hover:scale-110 transition-transform"></i>
+                    <span>Contact Studio</span>
+                </a>
+            </div>
+
+            <!-- Bottom Navigation -->
+            <div class="mt-16 pt-8 border-t border-gray-200 dark:border-gray-800/50 fade-in w-full max-w-lg mx-auto" style="animation-delay: 0.6s;">
+                <p class="text-xs font-bold uppercase tracking-widest text-lead dark:text-warmgray mb-6">Explore our studio</p>
+
+                <div class="flex flex-wrap items-center justify-center gap-4 sm:gap-8 text-sm font-semibold">
+                    <a href="gallery.html" class="flex items-center gap-2 text-lead dark:text-cream hover:text-amber dark:hover:text-amber transition-colors group">
+                        <span class="w-8 h-8 rounded-lg bg-amber/10 flex items-center justify-center group-hover:bg-amber group-hover:text-black transition-colors text-amber">
+                            <i class="fas fa-images text-xs"></i>
+                        </span>
+                        Gallery
+                    </a>
+
+                    <a href="restoration.html" class="flex items-center gap-2 text-lead dark:text-cream hover:text-amber dark:hover:text-amber transition-colors group">
+                        <span class="w-8 h-8 rounded-lg bg-amber/10 flex items-center justify-center group-hover:bg-amber group-hover:text-black transition-colors text-amber">
+                            <i class="fas fa-tools text-xs"></i>
+                        </span>
+                        Restoration
+                    </a>
+
+                    <a href="classes.html" class="flex items-center gap-2 text-lead dark:text-cream hover:text-amber dark:hover:text-amber transition-colors group">
+                        <span class="w-8 h-8 rounded-lg bg-amber/10 flex items-center justify-center group-hover:bg-amber group-hover:text-black transition-colors text-amber">
+                            <i class="fas fa-chalkboard-teacher text-xs"></i>
+                        </span>
+                        Classes
+                    </a>
+
+                    <a href="product.html" class="flex items-center gap-2 text-lead dark:text-cream hover:text-amber dark:hover:text-amber transition-colors group">
+                        <span class="w-8 h-8 rounded-lg bg-amber/10 flex items-center justify-center group-hover:bg-amber group-hover:text-black transition-colors text-amber">
+                            <i class="fas fa-sun text-xs"></i>
+                        </span>
+                        Suncatchers
+                    </a>
+                </div>
+            </div>
+
+        </div>
+    </div>
+
+    <!-- ===== FOOTER ===== -->
+    <div class="py-6 text-center text-xs text-lead dark:text-warmgray font-medium fade-in" style="animation-delay: 0.8s;">
+        &copy; 2026 Crystal Mosaic Studio. All rights reserved.
+    </div>
+
+    <!-- ===== DECORATIVE BLUR ORBS ===== -->
+    <div class="absolute top-0 left-0 w-64 h-64 bg-amber/20 rounded-full blur-3xl -translate-x-1/2 -translate-y-1/2 pointer-events-none"></div>
+    <div class="absolute bottom-0 right-0 w-96 h-96 bg-lead/10 dark:bg-amber/10 rounded-full blur-3xl translate-x-1/3 translate-y-1/3 pointer-events-none"></div>
+
+    <!-- ===== SCRIPTS ===== -->
+    <script>
+        const htmlElement = document.documentElement;
+        const themeToggle = document.getElementById("themeToggle");
+        const rtlToggle = document.getElementById("rtlToggle");
+
+        // Default to dark theme if no localStorage
+        if (!localStorage.getItem('theme')) {
+            localStorage.setItem('theme', 'dark');
+        }
+
+        // ---- THEME TOGGLE ----
+        function toggleDarkMode() {
+            htmlElement.classList.toggle('dark');
+            const isDark = htmlElement.classList.contains('dark');
+            htmlElement.setAttribute('data-theme', isDark ? 'dark' : 'light');
+            localStorage.setItem('theme', isDark ? 'dark' : 'light');
+
+            const themeIcon = document.getElementById('theme-icon');
+            if (themeIcon) {
+                themeIcon.className = isDark ? 'fas fa-sun' : 'fas fa-moon';
+            }
+        }
+
+        if (themeToggle) themeToggle.addEventListener("click", toggleDarkMode);
+
+        // Load saved theme
+        const savedTheme = localStorage.getItem('theme');
+        const themeIcon = document.getElementById('theme-icon');
+
+        if (savedTheme === 'dark') {
+            htmlElement.classList.add("dark");
+            htmlElement.setAttribute('data-theme', 'dark');
+            if (themeIcon) themeIcon.className = 'fas fa-sun';
+        } else {
+            htmlElement.classList.remove("dark");
+            htmlElement.setAttribute('data-theme', 'light');
+            if (themeIcon) themeIcon.className = 'fas fa-moon';
+        }
+
+        // ---- RTL TOGGLE ----
+        function toggleRTL() {
+            const current = htmlElement.getAttribute("dir") || "ltr";
+            const next = current === "rtl" ? "ltr" : "rtl";
+            htmlElement.setAttribute("dir", next);
+            localStorage.setItem("direction", next);
+        }
+
+        if (rtlToggle) rtlToggle.addEventListener("click", toggleRTL);
+
+        if (localStorage.getItem("direction") === "rtl") {
+            htmlElement.setAttribute("dir", "rtl");
+        }
+    </script>
+
+</body>
+</html>

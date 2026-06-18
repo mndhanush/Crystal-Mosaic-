@@ -1,0 +1,590 @@
+<!DOCTYPE html>
+<html lang="en" class="dark">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Crystal Mosaic - Glass Restoration Services</title>
+  <meta name="description" content="Expert stained glass restoration, repair, and conservation services for historic and residential windows.">
+  <script src="tailwind.js"></script>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  
+  <script>
+    tailwind.config = { 
+      darkMode: 'class',
+      theme: {
+        extend: {
+          colors: {
+            'lead': '#0F172A', 
+            'amber': '#F59E0B',
+            'light-bg': '#FFFFFF',
+            'light-surface': '#F8FAFC'
+          }
+        }
+      }
+    }
+  </script>
+
+  <style>
+    [dir="rtl"] { direction: rtl; }
+    
+    @keyframes fadeInUp {
+      from { opacity: 0; transform: translateY(30px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+    .animate-fade-in { animation: fadeInUp 0.8s ease-out; }
+
+    .hide-scroll::-webkit-scrollbar { display: none; }
+    .hide-scroll { -ms-overflow-style: none; scrollbar-width: none; }
+  </style>
+  <link rel="icon" type="image/svg+xml" href="assets/favicon.svg">
+</head>
+<body class="font-sans antialiased transition-colors duration-300 bg-light-bg dark:bg-lead text-black dark:text-white flex flex-col min-h-screen overflow-x-hidden w-full">
+
+  <div class="fixed top-4 left-0 right-0 z-50 px-4 sm:px-6 lg:px-8 flex justify-center pointer-events-none">
+    <nav class="w-full max-w-[1600px] bg-light-bg/80 dark:bg-lead/80 backdrop-blur-lg border border-gray-200 dark:border-amber/30 rounded-2xl lg:rounded-full shadow-2xl transition-colors duration-300 pointer-events-auto relative">
+      <div class="flex justify-between items-center h-[80px] px-8 xl:px-10">
+
+        <div class="flex-shrink-0 pr-2 xl:pr-4">
+          <a href="index.html" class="flex items-center gap-3">
+            <div class="flex flex-col">
+              <span class="text-lg xl:text-2xl font-semibold tracking-widest text-lead dark:text-white uppercase">Crystal<span class="text-amber">Mosaic</span></span>
+            </div>
+          </a>
+        </div>
+
+        <div class="hidden lg:flex items-center justify-center flex-1">
+          <div class="flex items-center gap-0.5 xl:gap-2">
+
+            <div class="relative group h-[80px] flex items-center">
+              <a href="index.html" class="text-[9px] xl:text-[10px] uppercase tracking-[0.15em] font-medium text-lead dark:text-white hover:text-amber dark:hover:text-amber transition-colors flex items-center relative px-1.5 xl:px-3 py-2 rounded-full hover:bg-gray-100 dark:hover:bg-amber/10 whitespace-nowrap">
+                <span>Home</span>
+                <i class="fas fa-chevron-down text-[8px] ms-1.5 transition-transform duration-300 group-hover:rotate-180"></i>
+              </a>
+              <div class="absolute top-[70px] start-0 w-48 bg-light-bg dark:bg-lead border border-gray-200 dark:border-amber/20 shadow-2xl rounded-xl opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-300 z-50 overflow-hidden">
+                <div class="py-2 flex flex-col">
+                  <a href="index.html" class="px-6 py-3 text-xs font-medium text-lead dark:text-white hover:text-black hover:bg-amber dark:hover:text-black transition-colors">HOME PAGE 01</a>
+                  <a href="home-2.html" class="px-6 py-3 text-xs font-medium text-lead dark:text-white hover:text-black hover:bg-amber dark:hover:text-black transition-colors">HOME PAGE 02</a>
+                </div>
+              </div>
+            </div>
+
+            <a href="about.html" class="text-[9px] xl:text-[10px] uppercase tracking-[0.15em] font-medium text-lead dark:text-white hover:text-amber dark:hover:text-amber transition-colors whitespace-nowrap px-1.5 xl:px-3 py-2 rounded-full hover:bg-gray-100 dark:hover:bg-amber/10">About</a>
+            <a href="gallery.html" class="text-[9px] xl:text-[10px] uppercase tracking-[0.15em] font-medium text-lead dark:text-white hover:text-amber dark:hover:text-amber transition-colors whitespace-nowrap px-1.5 xl:px-3 py-2 rounded-full hover:bg-gray-100 dark:hover:bg-amber/10">Gallery</a>
+            <a href="product.html" class="text-[9px] xl:text-[10px] uppercase tracking-[0.15em] font-medium text-lead dark:text-white hover:text-amber dark:hover:text-amber transition-colors whitespace-nowrap px-1.5 xl:px-3 py-2 rounded-full hover:bg-gray-100 dark:hover:bg-amber/10">Product</a>
+            
+            <a href="restoration.html" class="text-[9px] xl:text-[10px] uppercase tracking-[0.15em] font-semibold text-amber bg-gray-100 dark:bg-amber/10 transition-colors whitespace-nowrap px-1.5 xl:px-3 py-2 rounded-full">Restoration</a>
+            
+            <a href="classes.html" class="text-[9px] xl:text-[10px] uppercase tracking-[0.15em] font-medium text-lead dark:text-white hover:text-amber dark:hover:text-amber transition-colors whitespace-nowrap px-1.5 xl:px-3 py-2 rounded-full hover:bg-gray-100 dark:hover:bg-amber/10">Classes</a>
+            <a href="workshop.html" class="text-[9px] xl:text-[10px] uppercase tracking-[0.15em] font-medium text-lead dark:text-white hover:text-amber dark:hover:text-amber transition-colors whitespace-nowrap px-1.5 xl:px-3 py-2 rounded-full hover:bg-gray-100 dark:hover:bg-amber/10">Workshop</a>
+            <a href="faq.html" class="text-[9px] xl:text-[10px] uppercase tracking-[0.15em] font-medium text-lead dark:text-white hover:text-amber dark:hover:text-amber transition-colors whitespace-nowrap px-1.5 xl:px-3 py-2 rounded-full hover:bg-gray-100 dark:hover:bg-amber/10">FAQ</a>
+            <a href="pricing.html" class="text-[9px] xl:text-[10px] uppercase tracking-[0.15em] font-medium text-lead dark:text-white hover:text-amber dark:hover:text-amber transition-colors whitespace-nowrap px-1.5 xl:px-3 py-2 rounded-full hover:bg-gray-100 dark:hover:bg-amber/10">Pricing</a>
+            <a href="contact.html" class="text-[9px] xl:text-[10px] uppercase tracking-[0.15em] font-medium text-lead dark:text-white hover:text-amber dark:hover:text-amber transition-colors whitespace-nowrap px-1.5 xl:px-3 py-2 rounded-full hover:bg-gray-100 dark:hover:bg-amber/10">Contact</a>
+          </div>
+        </div>
+
+        <div class="hidden lg:flex items-center gap-1.5 xl:gap-3 flex-shrink-0">
+          <a href="login.html" class="border border-gray-300 dark:border-gray-600 text-lead dark:text-white hover:border-amber hover:text-amber px-4 xl:px-5 py-1.5 xl:py-2 rounded-full text-[9px] xl:text-[10px] uppercase tracking-wider font-medium transition-all duration-300">Login</a>
+          <a href="register.html" class="bg-amber text-black hover:bg-lead hover:text-white dark:hover:bg-white dark:hover:text-black px-4 xl:px-5 py-2 xl:py-2.5 rounded-full text-[9px] xl:text-[10px] uppercase tracking-wider font-medium transition-all duration-300">
+            Register
+          </a>
+
+          <div class="h-6 w-px bg-gray-300 dark:bg-gray-700 mx-1"></div>
+
+          <button id="theme-toggle" class="relative w-[56px] xl:w-[64px] h-[26px] xl:h-[30px] flex items-center bg-gray-200 dark:bg-[#1E293B] rounded-full p-1 transition-colors duration-300 focus:outline-none border border-gray-300 dark:border-gray-700 overflow-hidden" title="Toggle Theme">
+            <span class="text-[7px] xl:text-[8px] font-medium text-gray-500 absolute end-2.5 dark:opacity-0 transition-opacity duration-300 tracking-wider">LGT</span>
+            <span class="text-[7px] xl:text-[8px] font-medium text-amber absolute start-2.5 opacity-0 dark:opacity-100 transition-opacity duration-300 tracking-wider">DRK</span>
+            
+            <div class="w-[18px] xl:w-[20px] h-[18px] xl:h-[20px] bg-white dark:bg-lead border border-gray-200 dark:border-amber/50 rounded-full shadow-sm transform transition-transform duration-300 flex items-center justify-center rtl:dark:-translate-x-[30px] xl:rtl:dark:-translate-x-[34px] ltr:dark:translate-x-[30px] xl:ltr:dark:translate-x-[34px] dark:translate-x-[30px] xl:dark:translate-x-[34px] z-10">
+              <i class="fas fa-sun text-[8px] xl:text-[9px] text-amber dark:hidden block"></i>
+              <i class="fas fa-moon text-[8px] xl:text-[9px] text-amber hidden dark:block"></i>
+            </div>
+          </button>
+          
+          <button id="rtl-toggle" class="text-[9px] xl:text-[10px] font-medium text-gray-500 hover:text-amber transition-colors duration-300 px-2 py-1 rounded-full hover:bg-gray-100 dark:hover:bg-amber/10" title="Toggle RTL">
+            RTL
+          </button>
+        </div>
+
+        <div class="lg:hidden flex items-center">
+          <button id="mobile-menu-button" class="text-lead dark:text-white hover:text-amber focus:outline-none transition duration-300 bg-gray-100 dark:bg-amber/10 p-2 rounded-full">
+            <svg class="h-6 w-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path id="menu-icon" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"></path>
+              <path id="close-icon" class="hidden" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"></path>
+            </svg>
+          </button>
+        </div>
+
+      </div>
+
+      <div id="mobile-menu" class="hidden lg:hidden absolute top-[90px] left-0 right-0 bg-light-bg dark:bg-lead border border-gray-200 dark:border-amber/20 shadow-2xl rounded-2xl transition-colors duration-300 overflow-hidden">
+        <div class="px-6 pt-4 pb-8 flex flex-col gap-0 max-h-[calc(100vh-120px)] overflow-y-auto hide-scroll">
+
+          <div class="border-b border-gray-200 dark:border-white/10 flex flex-col">
+            <div class="w-full flex items-center justify-between py-4">
+              <a href="index.html" class="text-xs uppercase tracking-widest font-medium text-lead dark:text-white hover:text-amber transition duration-300">Home</a>
+              <button id="mobile-home-dropdown" class="p-2 -mr-2 text-amber focus:outline-none">
+                <i class="fas fa-plus text-xs" id="mobile-home-icon"></i>
+              </button>
+            </div>
+            <div id="mobile-home-menu" class="hidden pb-4 flex flex-col gap-3 ps-4 border-s-2 border-amber ms-2">
+              <a href="index.html" class="block text-xs font-medium text-gray-600 dark:text-white/70 hover:text-amber transition duration-300 uppercase tracking-wider">Home 1</a>
+              <a href="home-2.html" class="block text-xs font-medium text-gray-600 dark:text-white/70 hover:text-amber transition duration-300 uppercase tracking-wider">Home 2</a>
+            </div>
+          </div>
+
+          <a href="about.html" class="block py-4 border-b border-gray-200 dark:border-white/10 text-lead dark:text-white hover:text-amber transition duration-300 text-xs uppercase tracking-widest font-medium">About</a>
+          <a href="gallery.html" class="block py-4 border-b border-gray-200 dark:border-white/10 text-lead dark:text-white hover:text-amber transition duration-300 text-xs uppercase tracking-widest font-medium">Gallery</a>
+          <a href="product.html" class="block py-4 border-b border-gray-200 dark:border-white/10 text-lead dark:text-white hover:text-amber transition duration-300 text-xs uppercase tracking-widest font-medium">Product</a>
+          <a href="restoration.html" class="block py-4 border-b border-gray-200 dark:border-white/10 text-amber transition duration-300 text-xs uppercase tracking-widest font-semibold">Restoration</a>
+          <a href="classes.html" class="block py-4 border-b border-gray-200 dark:border-white/10 text-lead dark:text-white hover:text-amber transition duration-300 text-xs uppercase tracking-widest font-medium">Glass Classes</a>
+          <a href="workshop.html" class="block py-4 border-b border-gray-200 dark:border-white/10 text-lead dark:text-white hover:text-amber transition duration-300 text-xs uppercase tracking-widest font-medium">Workshop</a>
+          <a href="faq.html" class="block py-4 border-b border-gray-200 dark:border-white/10 text-lead dark:text-white hover:text-amber transition duration-300 text-xs uppercase tracking-widest font-medium">FAQ</a>
+          <a href="pricing.html" class="block py-4 border-b border-gray-200 dark:border-white/10 text-lead dark:text-white hover:text-amber transition duration-300 text-xs uppercase tracking-widest font-medium">Pricing</a>
+          <a href="contact.html" class="block py-4 border-b border-gray-200 dark:border-white/10 text-lead dark:text-white hover:text-amber transition duration-300 text-xs uppercase tracking-widest font-medium">Contact</a>
+
+          <div class="pt-6 flex flex-col gap-4">
+            <a href="login.html" class="flex items-center justify-center w-full bg-transparent border-2 border-lead dark:border-white text-lead dark:text-white hover:border-amber hover:text-amber dark:hover:border-amber dark:hover:text-amber px-4 py-3 rounded-full font-medium uppercase tracking-widest text-xs transition duration-300">
+              Login
+            </a>
+            <a href="register.html" class="flex items-center justify-center w-full bg-amber text-black hover:bg-lead hover:text-white dark:hover:bg-white dark:hover:text-black px-4 py-3 rounded-full font-medium uppercase tracking-widest text-xs transition duration-300">
+              Register
+            </a>
+            
+            <div class="flex justify-between items-center pt-6 pb-2 border-t border-gray-200 dark:border-white/10 mt-2">
+              <button id="mobile-theme-toggle" class="bg-gray-100 dark:bg-[#1a1a1a] border border-gray-300 dark:border-gray-700 rounded-full px-4 py-2 transition-colors flex items-center text-xs font-medium uppercase tracking-widest">
+                <span class="dark:hidden flex items-center text-amber"><i class="fas fa-sun me-2"></i> Light Mode</span>
+                <span class="hidden dark:flex items-center text-amber"><i class="fas fa-moon me-2"></i> Dark Mode</span>
+              </button>
+              <button id="mobile-rtl-toggle" class="text-gray-500 dark:text-gray-400 hover:text-amber transition-colors flex items-center text-xs font-medium uppercase tracking-widest">
+                <i class="fas fa-language me-2 text-lg"></i> RTL
+              </button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </nav>
+  </div>
+
+  <main class="flex-grow flex flex-col pt-[100px]">
+    
+    <section class="relative py-24 flex flex-col items-center justify-center overflow-hidden bg-light-surface dark:bg-lead border-b border-gray-200 dark:border-amber/20 transition-colors duration-300 min-h-[60vh]">
+      <div class="absolute inset-0 bg-[url('assets/restoration_hero.png')] bg-cover bg-center opacity-70 dark:opacity-50 z-0"></div>
+      <div class="absolute inset-0 bg-black/10 dark:bg-black/35 z-10"></div>
+
+      <div class="max-w-4xl mx-auto px-4 relative z-20 w-full text-center">
+        <div class="animate-fade-in w-full bg-white/80 dark:bg-lead/80 backdrop-blur-md rounded-3xl md:rounded-[2.5rem] p-6 sm:p-8 md:p-12 border border-gray-200/50 dark:border-amber/30 shadow-2xl max-w-3xl mx-auto">
+          <p class="text-amber uppercase tracking-[0.3em] text-sm font-semibold mb-4">Preserving Heritage</p>
+          <h1 class="text-4xl md:text-5xl font-semibold leading-tight tracking-tight text-black dark:text-white mb-6">
+            EXPERT <span class="text-amber">RESTORATION</span>
+          </h1>
+          <p class="text-base md:text-lg text-gray-700 dark:text-white/80 leading-relaxed font-semibold mx-auto max-w-2xl">
+            Time, weather, and gravity eventually affect all stained glass. We meticulously clean, repair, and rebuild historic and residential panels to ensure they survive for generations.
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <section class="py-24 bg-light-bg dark:bg-lead border-b border-gray-200 dark:border-amber/20 transition-colors duration-300">
+      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        
+        <div class="text-center mb-16">
+          <h2 class="text-3xl md:text-4xl font-semibold text-black dark:text-white tracking-tight mb-4">
+            Signs Your Glass Needs <span class="text-amber">Repair</span>
+          </h2>
+          <p class="text-gray-600 dark:text-white/70 max-w-2xl mx-auto text-base font-medium leading-relaxed">
+            Stained glass typically requires re-leading every 80 to 100 years. Look for these common indicators that your window requires professional studio attention.
+          </p>
+        </div>
+        
+        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
+          <div class="bg-light-surface dark:bg-[#1E293B] border border-gray-200 dark:border-amber/20 p-8 rounded-3xl group transition-colors duration-300">
+            <div class="w-12 h-12 bg-amber/10 text-amber rounded-full flex items-center justify-center mb-6">
+              <i class="fas fa-compress-arrows-alt text-xl"></i>
+            </div>
+            <h3 class="text-lg font-semibold text-black dark:text-white tracking-wide mb-3">Bowing & Bulging</h3>
+            <p class="text-gray-600 dark:text-white/70 text-sm leading-relaxed font-medium">
+              Over time, the weight of the glass causes the lead matrix to warp, creating a noticeable bulge that stresses the glass.
+            </p>
+          </div>
+          <div class="bg-light-surface dark:bg-[#1E293B] border border-gray-200 dark:border-amber/20 p-8 rounded-3xl group transition-colors duration-300">
+            <div class="w-12 h-12 bg-amber/10 text-amber rounded-full flex items-center justify-center mb-6">
+              <i class="fas fa-unlink text-xl"></i>
+            </div>
+            <h3 class="text-lg font-semibold text-black dark:text-white tracking-wide mb-3">Cracked Pieces</h3>
+            <p class="text-gray-600 dark:text-white/70 text-sm leading-relaxed font-medium">
+              Individual glass pieces that are cracked, chipped, or missing entirely due to impact, thermal stress, or building shifts.
+            </p>
+          </div>
+          <div class="bg-light-surface dark:bg-[#1E293B] border border-gray-200 dark:border-amber/20 p-8 rounded-3xl group transition-colors duration-300">
+            <div class="w-12 h-12 bg-amber/10 text-amber rounded-full flex items-center justify-center mb-6">
+              <i class="fas fa-water text-xl"></i>
+            </div>
+            <h3 class="text-lg font-semibold text-black dark:text-white tracking-wide mb-3">Deteriorating Cement</h3>
+            <p class="text-gray-600 dark:text-white/70 text-sm leading-relaxed font-medium">
+              The waterproofing putty between the glass and lead dries out and crumbles, leading to rattling glass and water leaks.
+            </p>
+          </div>
+          <div class="bg-light-surface dark:bg-[#1E293B] border border-gray-200 dark:border-amber/20 p-8 rounded-3xl group transition-colors duration-300">
+            <div class="w-12 h-12 bg-amber/10 text-amber rounded-full flex items-center justify-center mb-6">
+              <i class="fas fa-smog text-xl"></i>
+            </div>
+            <h3 class="text-lg font-semibold text-black dark:text-white tracking-wide mb-3">Oxidation & Grime</h3>
+            <p class="text-gray-600 dark:text-white/70 text-sm leading-relaxed font-medium">
+              Decades of pollution, nicotine, and candle soot that obscure the true colors and limit light transmission.
+            </p>
+          </div>
+        </div>
+
+      </div>
+    </section>
+
+    <section class="py-24 bg-light-surface dark:bg-lead border-b border-gray-200 dark:border-amber/20 transition-colors duration-300 relative overflow-hidden">
+      <div class="absolute left-8 lg:left-1/2 top-32 bottom-24 w-px bg-amber/30 hidden md:block"></div>
+
+      <div class="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+        <div class="text-center mb-16">
+          <h2 class="text-3xl md:text-4xl font-semibold text-black dark:text-white tracking-tight mb-4">
+            Our Studio <span class="text-amber">Process</span>
+          </h2>
+          <div class="w-24 h-1 bg-amber mx-auto rounded-full"></div>
+        </div>
+
+        <div class="space-y-16">
+          
+          <div class="relative flex flex-col md:flex-row items-center md:items-start gap-8">
+            <div class="md:w-1/2 md:text-right md:pr-12 order-2 md:order-1">
+              <h3 class="text-xl font-semibold text-black dark:text-white uppercase tracking-wide mb-3">Documentation & Removal</h3>
+              <p class="text-gray-600 dark:text-white/70 text-sm leading-relaxed font-medium">
+                Before a panel leaves its frame, we thoroughly photograph it in situ. Once safely in the studio, we create multiple charcoal rubbings of the lead matrix to ensure the original artist's pattern is preserved with absolute accuracy.
+              </p>
+            </div>
+            <div class="absolute left-0 md:left-1/2 w-12 h-12 bg-lead border-4 border-amber rounded-full flex items-center justify-center text-amber font-semibold transform md:-translate-x-1/2 z-10">1</div>
+            <div class="md:w-1/2 md:pl-12 order-1 md:order-2 w-full pl-16 md:pl-0">
+              <img src="assets/restoration_step_cathedral.png" alt="Documenting Glass" class="w-full h-48 object-cover rounded-2xl shadow-lg border border-gray-200 dark:border-white/10">
+            </div>
+          </div>
+
+          <div class="relative flex flex-col md:flex-row items-center md:items-start gap-8">
+            <div class="md:w-1/2 md:pr-12 order-1 w-full pl-16 md:pl-0 md:text-right">
+              <img src="assets/restoration_step_tools.png" alt="Dismantling Glass" class="w-full h-48 object-cover rounded-2xl shadow-lg border border-gray-200 dark:border-white/10">
+            </div>
+            <div class="absolute left-0 md:left-1/2 w-12 h-12 bg-amber border-4 border-amber rounded-full flex items-center justify-center text-black font-semibold transform md:-translate-x-1/2 z-10 shadow-[0_0_15px_rgba(245,158,11,0.5)]">2</div>
+            <div class="md:w-1/2 md:pl-12 order-2">
+              <h3 class="text-xl font-semibold text-black dark:text-white uppercase tracking-wide mb-3">Dismantling & Cleaning</h3>
+              <p class="text-gray-600 dark:text-white/70 text-sm leading-relaxed font-medium">
+                The panel is soaked to soften the century-old cement. We carefully peel away the oxidized lead came to free the original glass. Each piece of glass is chemically cleaned by hand to remove grime and old paint splatters without harming the fired details.
+              </p>
+            </div>
+          </div>
+
+          <div class="relative flex flex-col md:flex-row items-center md:items-start gap-8">
+            <div class="md:w-1/2 md:text-right md:pr-12 order-2 md:order-1">
+              <h3 class="text-xl font-semibold text-black dark:text-white uppercase tracking-wide mb-3">Glass Matching & Re-Leading</h3>
+              <p class="text-gray-600 dark:text-white/70 text-sm leading-relaxed font-medium">
+                Missing or shattered pieces are replaced using glass sourced globally to match the exact texture, density, and color of the original. The panel is then rebuilt on the rubbing using fresh, structurally sound lead came.
+              </p>
+            </div>
+            <div class="absolute left-0 md:left-1/2 w-12 h-12 bg-lead border-4 border-amber rounded-full flex items-center justify-center text-amber font-semibold transform md:-translate-x-1/2 z-10">3</div>
+            <div class="md:w-1/2 md:pl-12 order-1 md:order-2 w-full pl-16 md:pl-0">
+              <img src="assets/restoration_step_sheets.png" alt="Re-leading Glass" class="w-full h-48 object-cover rounded-2xl shadow-lg border border-gray-200 dark:border-white/10">
+            </div>
+          </div>
+
+          <div class="relative flex flex-col md:flex-row items-center md:items-start gap-8">
+            <div class="md:w-1/2 md:pr-12 order-1 w-full pl-16 md:pl-0 md:text-right">
+              <img src="assets/restoration_step_artisan.png" alt="Polished Glass" class="w-full h-48 object-cover rounded-2xl shadow-lg border border-gray-200 dark:border-white/10">
+            </div>
+            <div class="absolute left-0 md:left-1/2 w-12 h-12 bg-lead border-4 border-amber rounded-full flex items-center justify-center text-amber font-semibold transform md:-translate-x-1/2 z-10">4</div>
+            <div class="md:w-1/2 md:pl-12 order-2">
+              <h3 class="text-xl font-semibold text-black dark:text-white uppercase tracking-wide mb-3">Soldering & Weatherproofing</h3>
+              <p class="text-gray-600 dark:text-white/70 text-sm leading-relaxed font-medium">
+                Every joint is soldered on both sides. A specialized waterproofing cement is firmly pressed between the lead flanges and the glass. After curing, the panel is cleaned with whiting powder and polished to a dark, lustrous finish.
+              </p>
+            </div>
+          </div>
+
+        </div>
+      </div>
+    </section>
+
+    <section class="py-24 bg-light-bg dark:bg-lead border-b border-gray-200 dark:border-amber/20 transition-colors duration-300">
+      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        
+        <div class="grid lg:grid-cols-2 gap-12">
+          
+          <div class="bg-light-surface dark:bg-[#1E293B] rounded-[3rem] p-6 sm:p-10 md:p-14 border border-gray-200 dark:border-white/5">
+            <h3 class="text-2xl font-semibold text-black dark:text-white mb-6">Historical Conservation</h3>
+            <p class="text-gray-600 dark:text-white/70 font-medium text-sm leading-relaxed mb-8">
+              We specialize in large-scale restorations for churches, historic public buildings, and registered heritage homes. We adhere strictly to conservation guidelines, prioritizing the retention of original glass and fired paintwork while updating structural support systems to prevent future bowing.
+            </p>
+            <ul class="space-y-4">
+              <li class="flex items-center text-gray-700 dark:text-white/90 text-sm font-medium">
+                <i class="fas fa-check text-amber w-6"></i> Complete Cathedral Window Re-leading
+              </li>
+              <li class="flex items-center text-gray-700 dark:text-white/90 text-sm font-medium">
+                <i class="fas fa-check text-amber w-6"></i> Painted Glass Re-firing & Preservation
+              </li>
+              <li class="flex items-center text-gray-700 dark:text-white/90 text-sm font-medium">
+                <i class="fas fa-check text-amber w-6"></i> Protective Storm Glazing Installation
+              </li>
+            </ul>
+          </div>
+
+          <div class="bg-amber/10 dark:bg-amber/5 rounded-[3rem] p-6 sm:p-10 md:p-14 border-2 border-amber">
+            <h3 class="text-2xl font-semibold text-black dark:text-white mb-6">Residential Repair</h3>
+            <p class="text-gray-600 dark:text-white/70 font-medium text-sm leading-relaxed mb-8">
+              From a rattling front door transom to a cracked cabinet insert, no repair is too small. We offer in-home removals and can often execute minor drop-in repairs directly in your home without needing to fully dismantle the panel in the studio.
+            </p>
+            <ul class="space-y-4">
+              <li class="flex items-center text-gray-700 dark:text-white/90 text-sm font-medium">
+                <i class="fas fa-check text-amber w-6"></i> Door & Transom Stabilization
+              </li>
+              <li class="flex items-center text-gray-700 dark:text-white/90 text-sm font-medium">
+                <i class="fas fa-check text-amber w-6"></i> Single Cracked Glass Replacement
+              </li>
+              <li class="flex items-center text-gray-700 dark:text-white/90 text-sm font-medium">
+                <i class="fas fa-check text-amber w-6"></i> Re-puttying for Draft Prevention
+              </li>
+            </ul>
+          </div>
+
+        </div>
+
+      </div>
+    </section>
+
+    <section class="py-24 bg-light-surface dark:bg-lead border-b border-gray-200 dark:border-amber/20 transition-colors duration-300">
+      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+        <h2 class="text-3xl md:text-4xl font-semibold text-black dark:text-white tracking-tight mb-16">
+          Restored <span class="text-amber">Masterpieces</span>
+        </h2>
+        
+        <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
+          <div class="aspect-square overflow-hidden rounded-3xl group relative">
+            <img src="assets/restoration_masterpiece_cathedral.png" alt="Restored window" class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110">
+            <div class="absolute inset-0 bg-black/40 group-hover:bg-transparent transition-colors duration-300"></div>
+          </div>
+          <div class="aspect-square overflow-hidden rounded-3xl group relative">
+            <img src="assets/restoration_masterpiece_victorian.png" alt="Restored floral panel" class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110">
+            <div class="absolute inset-0 bg-black/40 group-hover:bg-transparent transition-colors duration-300"></div>
+          </div>
+          <div class="aspect-square overflow-hidden rounded-3xl group relative">
+            <img src="assets/restoration_masterpiece_botanical.png" alt="Restored geometric" class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110">
+            <div class="absolute inset-0 bg-black/40 group-hover:bg-transparent transition-colors duration-300"></div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="py-24 bg-light-bg dark:bg-lead transition-colors duration-300">
+      <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="border border-gray-200 dark:border-amber/30 p-6 sm:p-10 md:p-16 relative overflow-hidden bg-light-surface dark:bg-[#1E293B] shadow-2xl rounded-[3rem]">
+          
+          <div class="text-center mb-10 relative z-10">
+            <h2 class="text-3xl font-semibold text-black dark:text-white tracking-tight mb-4">
+              Get a Free <span class="text-amber">Repair Estimate</span>
+            </h2>
+            <p class="text-gray-600 dark:text-white/70 max-w-xl mx-auto font-medium text-sm">
+              Please provide details about your damaged glass. For the most accurate quote, include approximate dimensions and describe the issues (e.g., bowing, missing glass, rattling).
+            </p>
+          </div>
+
+          <form class="relative z-10 flex flex-col gap-6">
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+              <div>
+                <label class="block text-black dark:text-white text-xs font-semibold uppercase tracking-wider mb-2">Name</label>
+                <input type="text" class="w-full px-4 py-3 bg-white dark:bg-lead border border-gray-300 dark:border-gray-700 rounded-xl focus:outline-none focus:border-amber text-black dark:text-white text-sm font-medium" placeholder="John Doe">
+              </div>
+              <div>
+                <label class="block text-black dark:text-white text-xs font-semibold uppercase tracking-wider mb-2">Email Address</label>
+                <input type="email" class="w-full px-4 py-3 bg-white dark:bg-lead border border-gray-300 dark:border-gray-700 rounded-xl focus:outline-none focus:border-amber text-black dark:text-white text-sm font-medium" placeholder="john@example.com">
+              </div>
+            </div>
+            
+            <div>
+              <label class="block text-black dark:text-white text-xs font-semibold uppercase tracking-wider mb-2">Window Dimensions (Approx)</label>
+              <input type="text" class="w-full px-4 py-3 bg-white dark:bg-lead border border-gray-300 dark:border-gray-700 rounded-xl focus:outline-none focus:border-amber text-black dark:text-white text-sm font-medium" placeholder="e.g. 24 inches by 36 inches">
+            </div>
+
+            <div>
+              <label class="block text-black dark:text-white text-xs font-semibold uppercase tracking-wider mb-2">Description of Damage</label>
+              <textarea rows="4" class="w-full px-4 py-3 bg-white dark:bg-lead border border-gray-300 dark:border-gray-700 rounded-xl focus:outline-none focus:border-amber text-black dark:text-white text-sm font-medium" placeholder="Describe the cracked glass, bowing lead, or rattling..."></textarea>
+            </div>
+
+            <div class="bg-amber/10 border border-amber/30 rounded-xl p-4 flex items-center justify-center border-dashed cursor-pointer hover:bg-amber/20 transition-colors">
+              <span class="text-amber font-medium text-sm"><i class="fas fa-camera mr-2"></i> Upload Photos of the Window</span>
+            </div>
+
+            <div class="mt-4 text-center">
+              <button type="submit" class="px-10 py-4 bg-amber text-black hover:bg-lead hover:text-white dark:hover:bg-white dark:hover:text-black font-semibold uppercase tracking-widest text-xs transition-colors duration-300 rounded-full w-full sm:w-auto">
+                Submit Request
+              </button>
+            </div>
+          </form>
+
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+  <footer class="bg-lead text-white pt-24 pb-12 mt-auto border-t border-amber/30">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      
+      <div class="grid md:grid-cols-2 lg:grid-cols-4 gap-12 mb-16">
+        
+        <div>
+          <h3 class="text-3xl font-semibold tracking-widest uppercase mb-6 text-white">Crystal<span class="text-amber">Mosaic</span></h3>
+          <p class="text-white/70 mb-8 font-medium leading-relaxed text-sm">
+            Preserving history and creating luminous art through master stained glass restoration and professional studio workshops.
+          </p>
+          <div class="flex gap-4">
+            <a href="#" class="w-10 h-10 border border-white/20 text-white hover:border-amber hover:text-amber flex items-center justify-center transition-all duration-300 rounded-full">
+              <i class="fab fa-facebook-f text-sm"></i>
+            </a>
+            <a href="#" class="w-10 h-10 border border-white/20 text-white hover:border-amber hover:text-amber flex items-center justify-center transition-all duration-300 rounded-full">
+              <i class="fab fa-instagram text-sm"></i>
+            </a>
+            <a href="#" class="w-10 h-10 border border-white/20 text-white hover:border-amber hover:text-amber flex items-center justify-center transition-all duration-300 rounded-full">
+              <i class="fab fa-pinterest-p text-sm"></i>
+            </a>
+          </div>
+        </div>
+
+        <div>
+          <h4 class="text-sm uppercase tracking-[0.2em] font-semibold mb-8 text-white">Quick Links</h4>
+          <ul class="flex flex-col gap-5">
+            <li><a href="index.html" class="text-sm text-white/70 hover:text-amber transition-colors duration-300 font-medium uppercase tracking-wider">Home</a></li>
+            <li><a href="about.html" class="text-sm text-white/70 hover:text-amber transition-colors duration-300 font-medium uppercase tracking-wider">About Studio</a></li>
+            <li><a href="gallery.html" class="text-sm text-white/70 hover:text-amber transition-colors duration-300 font-medium uppercase tracking-wider">Art Gallery</a></li>
+            <li><a href="product.html" class="text-sm text-white/70 hover:text-amber transition-colors duration-300 font-medium uppercase tracking-wider">Suncatcher Shop</a></li>
+            <li><a href="faq.html" class="text-sm text-white/70 hover:text-amber transition-colors duration-300 font-medium uppercase tracking-wider">FAQ</a></li>
+          </ul>
+        </div>
+
+        <div>
+          <h4 class="text-sm uppercase tracking-[0.2em] font-semibold mb-8 text-white">Our Services</h4>
+          <ul class="flex flex-col gap-5">
+            <li><a href="restoration.html" class="text-sm text-white/70 hover:text-amber transition-colors duration-300 font-medium uppercase tracking-wider">Glass Restoration</a></li>
+            <li><a href="classes.html" class="text-sm text-white/70 hover:text-amber transition-colors duration-300 font-medium uppercase tracking-wider">Glass Classes</a></li>
+            <li><a href="workshop.html" class="text-sm text-white/70 hover:text-amber transition-colors duration-300 font-medium uppercase tracking-wider">Studio Workshops</a></li>
+            <li><a href="pricing.html" class="text-sm text-white/70 hover:text-amber transition-colors duration-300 font-medium uppercase tracking-wider">Repair Estimates</a></li>
+          </ul>
+        </div>
+
+        <div>
+          <h4 class="text-sm uppercase tracking-[0.2em] font-semibold mb-8 text-white">Contact Us</h4>
+          <ul class="flex flex-col gap-6">
+            <li class="flex items-start">
+              <i class="fas fa-map-marker-alt text-amber mt-1 me-4 text-base"></i>
+              <span class="text-sm text-white/70 font-medium uppercase tracking-wide leading-relaxed">124 Artisan Alley, Creative District</span>
+            </li>
+            <li class="flex items-center">
+              <i class="fas fa-phone text-amber me-4 text-base"></i>
+              <a href="tel:+15551234567" class="text-sm text-white/70 hover:text-amber transition-colors font-medium uppercase tracking-wider">+1 (555) 123-4567</a>
+            </li>
+            <li class="flex items-center">
+              <i class="fas fa-envelope text-amber me-4 text-base"></i>
+              <a href="mailto:hello@crystalmosaic.com" class="text-sm text-white/70 hover:text-amber transition-colors font-medium uppercase tracking-wider">hello@crystalmosaic.com</a>
+            </li>
+          </ul>
+        </div>
+
+      </div>
+
+      <div class="border-t border-white/10 pt-8 flex flex-col md:flex-row justify-between items-center">
+        <p class="text-white/50 text-xs tracking-widest uppercase mb-4 md:mb-0 font-medium">
+          © 2026 Crystal Mosaic Studio. All rights reserved.
+        </p>
+        <div class="flex gap-6">
+          <a href="login.html" class="text-white/50 hover:text-amber text-xs tracking-widest uppercase font-medium transition-colors duration-300">Client Login</a>
+          <a href="#" class="text-white/50 hover:text-amber text-xs tracking-widest uppercase font-medium transition-colors duration-300">Privacy</a>
+          <a href="#" class="text-white/50 hover:text-amber text-xs tracking-widest uppercase font-medium transition-colors duration-300">Terms</a>
+        </div>
+      </div>
+
+    </div>
+  </footer>
+
+  <script>
+    // Theme Toggle Functionality
+    const themeToggle = document.getElementById('theme-toggle');
+    const mobileThemeToggle = document.getElementById('mobile-theme-toggle');
+    const html = document.documentElement;
+
+    function toggleTheme() {
+      if (html.classList.contains('dark')) {
+        html.classList.remove('dark');
+        localStorage.setItem('theme', 'light');
+      } else {
+        html.classList.add('dark');
+        localStorage.setItem('theme', 'dark');
+      }
+    }
+
+    if (themeToggle) themeToggle.addEventListener('click', toggleTheme);
+    if (mobileThemeToggle) mobileThemeToggle.addEventListener('click', toggleTheme);
+    if (localStorage.getItem('theme') === 'light') html.classList.remove('dark');
+
+    // RTL Toggle Functionality
+    const rtlToggle = document.getElementById('rtl-toggle');
+    const mobileRtlToggle = document.getElementById('mobile-rtl-toggle');
+
+    function toggleRTL() {
+      if (html.getAttribute('dir') === 'rtl') {
+        html.removeAttribute('dir');
+        localStorage.setItem('direction', 'ltr');
+      } else {
+        html.setAttribute('dir', 'rtl');
+        localStorage.setItem('direction', 'rtl');
+      }
+    }
+
+    if (rtlToggle) rtlToggle.addEventListener('click', toggleRTL);
+    if (mobileRtlToggle) mobileRtlToggle.addEventListener('click', toggleRTL);
+    if (localStorage.getItem('direction') === 'rtl') html.setAttribute('dir', 'rtl');
+
+    // Mobile Menu Toggle
+    const mobileMenuButton = document.getElementById('mobile-menu-button');
+    const mobileMenu = document.getElementById('mobile-menu');
+    const menuIcon = document.getElementById('menu-icon');
+    const closeIcon = document.getElementById('close-icon');
+
+    mobileMenuButton.addEventListener('click', () => {
+      mobileMenu.classList.toggle('hidden');
+      menuIcon.classList.toggle('hidden');
+      closeIcon.classList.toggle('hidden');
+      if (!mobileMenu.classList.contains('hidden')) {
+          mobileMenu.classList.add('flex');
+      } else {
+          mobileMenu.classList.remove('flex');
+      }
+    });
+
+    // Mobile Dropdown Functionality
+    function setupMobileDropdown(dropdownId, menuId, iconId) {
+      const dropdownBtn = document.getElementById(dropdownId);   
+      const menu = document.getElementById(menuId);
+      const icon = document.getElementById(iconId);
+      
+      if(dropdownBtn && menu && icon) {
+        dropdownBtn.addEventListener('click', (e) => {
+          e.preventDefault(); 
+          menu.classList.toggle('hidden');
+          if(menu.classList.contains('hidden')) {
+            icon.classList.remove('fa-minus');
+            icon.classList.add('fa-plus');
+            menu.classList.remove('flex');
+          } else {
+            icon.classList.remove('fa-plus');
+            icon.classList.add('fa-minus');
+            menu.classList.add('flex');
+          }
+        });
+      }
+    }
+
+    setupMobileDropdown('mobile-home-dropdown', 'mobile-home-menu', 'mobile-home-icon');
+  </script>
+</body>
+</html>

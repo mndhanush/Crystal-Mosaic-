@@ -1,0 +1,270 @@
+<!DOCTYPE html>
+<html lang="en" class="dark">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Crystal Mosaic - Client Login</title>
+  <meta name="description" content="Log in to your Crystal Mosaic client account.">
+  <script src="tailwind.js"></script>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  
+  <script>
+    tailwind.config = { 
+      darkMode: 'class',
+      theme: {
+        extend: {
+          colors: {
+            'lead': '#0F172A', 
+            'amber': '#F59E0B',
+            'light-bg': '#FFFFFF',
+            'light-surface': '#F8FAFC'
+          }
+        }
+      }
+    }
+  </script>
+
+  <style>
+    [dir="rtl"] { direction: rtl; }
+    
+    @keyframes fadeInUp {
+      from { opacity: 0; transform: translateY(30px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+    .animate-fade-in { animation: fadeInUp 0.8s ease-out; }
+  </style>
+  <link rel="icon" type="image/svg+xml" href="assets/favicon.svg">
+</head>
+<body class="font-sans antialiased transition-colors duration-300 bg-light-bg dark:bg-lead text-black dark:text-white flex flex-col h-screen overflow-hidden w-full">
+
+  <!-- MINIMAL FLOATING GLASS NAVBAR -->
+  <div class="fixed top-4 left-0 right-0 z-50 px-4 sm:px-6 lg:px-8 flex justify-center pointer-events-none">
+    <nav class="w-full max-w-[1600px] bg-light-bg/80 dark:bg-lead/80 backdrop-blur-lg border border-gray-200 dark:border-amber/30 rounded-2xl lg:rounded-full shadow-2xl transition-colors duration-300 pointer-events-auto relative">
+      <div class="flex justify-between items-center h-[80px] px-6 lg:px-10">
+
+        <!-- Logo -->
+        <div class="flex-shrink-0">
+          <a href="index.html" class="flex items-center gap-3">
+            <div class="flex flex-col">
+              <span class="text-lg xl:text-2xl font-semibold tracking-widest text-lead dark:text-white uppercase">Crystal<span class="text-amber">Mosaic</span></span>
+            </div>
+          </a>
+        </div>
+
+        <!-- Toggles (Dark Mode & RTL Only) -->
+        <div class="flex items-center gap-2 xl:gap-3">
+          
+          <!-- Theme Toggle -->
+          <button id="theme-toggle" class="relative w-[56px] xl:w-[64px] h-[26px] xl:h-[30px] flex items-center bg-gray-200 dark:bg-[#1E293B] rounded-full p-1 transition-colors duration-300 focus:outline-none border border-gray-300 dark:border-gray-700 overflow-hidden" title="Toggle Theme">
+            <span class="text-[7px] xl:text-[8px] font-medium text-gray-500 absolute end-2.5 dark:opacity-0 transition-opacity duration-300 tracking-wider">LGT</span>
+            <span class="text-[7px] xl:text-[8px] font-medium text-amber absolute start-2.5 opacity-0 dark:opacity-100 transition-opacity duration-300 tracking-wider">DRK</span>
+            
+            <div class="w-[18px] xl:w-[20px] h-[18px] xl:h-[20px] bg-white dark:bg-lead border border-gray-200 dark:border-amber/50 rounded-full shadow-sm transform transition-transform duration-300 flex items-center justify-center rtl:dark:-translate-x-[30px] xl:rtl:dark:-translate-x-[34px] ltr:dark:translate-x-[30px] xl:ltr:dark:translate-x-[34px] dark:translate-x-[30px] xl:dark:translate-x-[34px] z-10">
+              <i class="fas fa-sun text-[8px] xl:text-[9px] text-amber dark:hidden block"></i>
+              <i class="fas fa-moon text-[8px] xl:text-[9px] text-amber hidden dark:block"></i>
+            </div>
+          </button>
+          
+          <!-- RTL Toggle -->
+          <button id="rtl-toggle" class="text-[9px] xl:text-[10px] font-medium text-gray-500 hover:text-amber transition-colors duration-300 px-2 py-1 rounded-full hover:bg-gray-100 dark:hover:bg-amber/10" title="Toggle RTL">
+            RTL
+          </button>
+        </div>
+
+      </div>
+    </nav>
+  </div>
+
+  <!-- Main Content Area: Login Screen -->
+  <main class="flex-grow flex items-center justify-center relative pt-[80px] overflow-hidden bg-light-surface dark:bg-lead transition-colors duration-300">
+    
+    <!-- Cathedral Glass Abstract Background -->
+    <div class="absolute inset-0 bg-[url('assets/login_bg.png')] bg-cover bg-center opacity-40 dark:opacity-30 z-0"></div>
+    <div class="absolute inset-0 bg-gradient-to-br from-light-bg via-light-surface/90 to-light-bg dark:from-lead dark:via-lead/95 dark:to-lead z-0 transition-colors duration-300"></div>
+
+    <!-- Glowing Orbs -->
+    <div class="absolute top-1/4 start-10 w-72 h-72 bg-amber/20 rounded-full blur-3xl animate-pulse pointer-events-none z-0"></div>
+    <div class="absolute bottom-1/4 end-10 w-96 h-96 bg-blue-600/10 rounded-full blur-3xl animate-pulse pointer-events-none z-0" style="animation-delay: 1.5s;"></div>
+
+    <div class="w-full max-w-md px-4 relative z-10">
+      
+      <!-- Login Card -->
+      <div class="bg-light-bg dark:bg-[#1E293B] border border-gray-200 dark:border-white/10 shadow-2xl p-6 sm:p-8 animate-fade-in group rounded-[2rem] relative overflow-hidden transition-colors duration-300">
+        
+        <!-- Top Accent Line -->
+        <div class="absolute top-0 start-0 w-full h-1.5 bg-gradient-to-r from-amber to-amber/40"></div>
+
+        <div class="text-center mb-5">
+          <h1 class="text-xl sm:text-2xl font-semibold text-black dark:text-white tracking-tight mb-1">Welcome Back.</h1>
+          <p class="text-gray-500 dark:text-white/60 text-xs font-medium">Log in to view your workshop schedule or check your repair estimate.</p>
+        </div>
+
+        <form class="flex flex-col gap-4" onsubmit="handleLogin(event)">
+
+          <div>
+            <label class="block text-[9px] font-semibold uppercase tracking-widest text-gray-500 dark:text-white/70 mb-1.5">
+              Email Address
+            </label>
+            <input 
+              type="email" 
+              required
+              placeholder="YOUR.EMAIL@EXAMPLE.COM"
+              class="w-full px-4 py-2.5 bg-gray-50 dark:bg-lead border border-gray-200 dark:border-gray-700 text-black dark:text-white text-xs font-medium focus:outline-none focus:border-amber focus:ring-1 focus:ring-amber rounded-xl transition-all"
+            />
+          </div>
+
+          <div>
+            <label class="block text-[9px] font-semibold uppercase tracking-widest text-gray-500 dark:text-white/70 mb-1.5">
+              Password
+            </label>
+            <div class="relative">
+              <input 
+                type="password" 
+                id="password"
+                required
+                placeholder="ENTER YOUR PASSWORD"
+                class="w-full px-4 py-2.5 bg-gray-50 dark:bg-lead border border-gray-200 dark:border-gray-700 text-black dark:text-white text-xs font-medium focus:outline-none focus:border-amber focus:ring-1 focus:ring-amber rounded-xl transition-all"
+              />
+              <button 
+                type="button" 
+                onclick="togglePassword()"
+                class="absolute end-4 top-1/2 -translate-y-1/2 text-gray-400 hover:text-amber transition-colors"
+              >
+                <i class="fas fa-eye text-sm" id="toggleIcon"></i>
+              </button>
+            </div>
+          </div>
+
+          <div class="flex items-center justify-between text-[10px] sm:text-xs pt-1">
+            <label class="flex items-center cursor-pointer group-checkbox">
+              <input type="checkbox" class="w-3.5 h-3.5 rounded border-gray-300 dark:border-gray-600 text-amber focus:ring-amber bg-white dark:bg-lead">
+              <span class="ms-2 text-gray-500 dark:text-white/60 font-medium uppercase tracking-widest">Remember me</span>
+            </label>
+            <span class="text-amber font-semibold uppercase tracking-widest cursor-pointer hover:text-black dark:hover:text-white transition-colors">
+              Forgot password?
+            </span>
+          </div>
+
+          <button 
+            type="submit"
+            class="w-full py-3.5 mt-2 bg-amber text-black hover:bg-lead hover:text-white dark:hover:bg-white dark:hover:text-black font-semibold uppercase tracking-widest text-xs transition-colors duration-300 rounded-full shadow-lg shadow-amber/20 flex items-center justify-center gap-2"
+          >
+            <span>Sign In</span>
+            <i class="fas fa-arrow-right text-[10px] rtl:rotate-180"></i>
+          </button>
+
+          <div class="relative my-3.5">
+            <div class="absolute inset-0 flex items-center">
+              <div class="w-full border-t border-gray-200 dark:border-white/10"></div>
+            </div>
+            <div class="relative flex justify-center text-[9px] uppercase tracking-widest font-semibold">
+              <span class="px-3 bg-light-bg dark:bg-[#1E293B] text-gray-400 dark:text-white/50">Or Continue With</span>
+            </div>
+          </div>
+
+          <div class="grid grid-cols-2 gap-3">
+            <button 
+              type="button"
+              class="flex items-center justify-center w-full px-4 py-2.5 border border-gray-200 dark:border-white/10 hover:border-amber dark:hover:border-amber transition-colors bg-white dark:bg-lead rounded-full gap-2.5 shadow-sm"
+            >
+              <svg class="w-3.5 h-3.5" viewBox="0 0 24 24">
+                <path fill="#4285F4" d="M22.56 12.25c0-.78-.07-1.53-.2-2.25H12v4.26h5.92c-.26 1.37-1.04 2.53-2.21 3.31v2.77h3.57c2.08-1.92 3.28-4.74 3.28-8.09z"/>
+                <path fill="#34A853" d="M12 23c2.97 0 5.46-.98 7.28-2.66l-3.57-2.77c-.98.66-2.23 1.06-3.71 1.06-2.86 0-5.29-1.93-6.16-4.53H2.18v2.84C3.99 20.53 7.7 23 12 23z"/>
+                <path fill="#FBBC05" d="M5.84 14.09c-.22-.66-.35-1.36-.35-2.09s.13-1.43.35-2.09V7.07H2.18C1.43 8.55 1 10.22 1 12s.43 3.45 1.18 4.93l2.85-2.22.81-.62z"/>
+                <path fill="#EA4335" d="M12 5.38c1.62 0 3.06.56 4.21 1.64l3.15-3.15C17.45 2.09 14.97 1 12 1 7.7 1 3.99 3.47 2.18 7.07l3.66 2.84c.87-2.6 3.3-4.53 6.16-4.53z"/>
+              </svg>
+              <span class="text-[9px] font-semibold uppercase tracking-widest text-black dark:text-white">Google</span>
+            </button>
+
+            <button 
+              type="button"
+              class="flex items-center justify-center w-full px-4 py-2.5 border border-gray-200 dark:border-white/10 hover:border-amber dark:hover:border-amber transition-colors bg-white dark:bg-lead rounded-full gap-2.5 shadow-sm"
+            >
+              <i class="fab fa-apple text-sm text-black dark:text-white"></i>
+              <span class="text-[9px] font-semibold uppercase tracking-widest text-black dark:text-white">Apple</span>
+            </button>
+          </div>
+
+        </form>
+
+        <div class="mt-6 text-center text-[10px] sm:text-xs font-medium uppercase tracking-widest text-gray-500 dark:text-white/60">
+          Need an account? 
+          <a href="register.html" class="text-amber hover:text-black dark:hover:text-white transition-colors ms-1 font-semibold">
+            Register Here
+          </a>
+        </div>
+
+      </div>
+    </div>
+  </main>
+
+  <script>
+    // --- Password Visibility Toggle ---
+    function togglePassword() {
+        const passwordInput = document.getElementById('password');
+        const toggleIcon = document.getElementById('toggleIcon');
+
+        if (passwordInput.type === 'password') {
+            passwordInput.type = 'text';
+            toggleIcon.classList.remove('fa-eye');
+            toggleIcon.classList.add('fa-eye-slash');
+        } else {
+            passwordInput.type = 'password';
+            toggleIcon.classList.remove('fa-eye-slash');
+            toggleIcon.classList.add('fa-eye');
+        }
+    }
+
+    // --- Handle Login Submission ---
+    function handleLogin(event) {
+        event.preventDefault();
+
+        const button = event.target.querySelector('button[type="submit"]');
+        const icon = button.querySelector('i');
+        const span = button.querySelector('span');
+        
+        icon.className = 'fas fa-spinner fa-spin';
+        span.innerText = 'AUTHENTICATING...';
+        button.disabled = true;
+        button.classList.add('opacity-50', 'cursor-not-allowed');
+
+        setTimeout(() => {
+            window.location.href = 'client-dashboard.html';
+        }, 1500);
+    }
+
+    // Theme Toggle Functionality
+    const themeToggle = document.getElementById('theme-toggle');
+    const html = document.documentElement;
+
+    function toggleTheme() {
+      if (html.classList.contains('dark')) {
+        html.classList.remove('dark');
+        localStorage.setItem('theme', 'light');
+      } else {
+        html.classList.add('dark');
+        localStorage.setItem('theme', 'dark');
+      }
+    }
+
+    if (themeToggle) themeToggle.addEventListener('click', toggleTheme);
+    if (localStorage.getItem('theme') === 'light') html.classList.remove('dark');
+
+    // RTL Toggle Functionality
+    const rtlToggle = document.getElementById('rtl-toggle');
+
+    function toggleRTL() {
+      if (html.getAttribute('dir') === 'rtl') {
+        html.removeAttribute('dir');
+        localStorage.setItem('direction', 'ltr');
+      } else {
+        html.setAttribute('dir', 'rtl');
+        localStorage.setItem('direction', 'rtl');
+      }
+    }
+
+    if (rtlToggle) rtlToggle.addEventListener('click', toggleRTL);
+    if (localStorage.getItem('direction') === 'rtl') html.setAttribute('dir', 'rtl');
+  </script>
+</body>
+</html>
