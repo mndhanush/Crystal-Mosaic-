@@ -205,12 +205,25 @@
 
           <!-- Mobile Auth & Toggles -->
           <div class="pt-6 flex flex-col gap-4">
-            <a href="login.html" class="flex items-center justify-center w-full bg-transparent border-2 border-lead dark:border-white text-lead dark:text-white hover:border-amber hover:text-amber dark:hover:border-amber dark:hover:text-amber px-4 py-3 rounded-full font-medium uppercase tracking-widest text-xs transition duration-300">
-              Login
-            </a>
-            <a href="register.html" class="flex items-center justify-center w-full bg-amber text-black hover:bg-lead hover:text-white dark:hover:bg-white dark:hover:text-black px-4 py-3 rounded-full font-medium uppercase tracking-widest text-xs transition duration-300">
-              Register
-            </a>
+            <div class="grid grid-cols-2 gap-3">
+              <a href="login.html" class="flex items-center justify-center w-full bg-transparent border-2 border-lead dark:border-white text-lead dark:text-white hover:border-amber hover:text-amber dark:hover:border-amber dark:hover:text-amber px-2 py-3 rounded-full font-medium uppercase tracking-widest text-[11px] sm:text-xs transition duration-300">
+                Login
+              </a>
+              <a href="register.html" class="flex items-center justify-center w-full bg-amber text-black hover:bg-lead hover:text-white dark:hover:bg-white dark:hover:text-black px-2 py-3 rounded-full font-medium uppercase tracking-widest text-[11px] sm:text-xs transition duration-300">
+                Register
+              </a>
+            </div>
+            <!-- Mobile Toggles -->
+            <div class="flex items-center justify-center gap-4 pt-4 border-t border-gray-200 dark:border-white/10 mt-2">
+              <button id="mobile-theme-toggle" class="flex items-center gap-2 text-lead dark:text-white hover:text-amber focus:outline-none transition duration-300 bg-gray-100 dark:bg-amber/10 px-4 py-2.5 rounded-full" title="Toggle Light/Dark Mode">
+                <i class="fas fa-moon text-sm" id="mobile-theme-icon"></i>
+                <span class="text-xs uppercase tracking-widest font-medium" id="mobile-theme-text">Light Mode</span>
+              </button>
+              <button id="mobile-rtl-toggle" class="flex items-center gap-2 text-lead dark:text-white hover:text-amber focus:outline-none transition duration-300 bg-gray-100 dark:bg-amber/10 px-4 py-2.5 rounded-full" title="Toggle RTL/LTR">
+                <i class="fas fa-exchange-alt text-sm"></i>
+                <span class="text-xs uppercase tracking-widest font-medium">RTL</span>
+              </button>
+            </div>
 
           </div>
         </div>
@@ -710,11 +723,11 @@
       function updateThemeIcons() {
         const isDark = html.classList.contains('dark');
         const themeIcon = document.getElementById('theme-icon');
-        if (themeIcon) themeIcon.className = isDark ? 'fas fa-sun text-sm' : 'fas fa-moon text-sm';
+        if (themeIcon) themeIcon.className = isDark ? 'fas fa-moon text-sm' : 'fas fa-sun text-sm';
         const mobileThemeIcon = document.getElementById('mobile-theme-icon');
         const mobileThemeText = document.getElementById('mobile-theme-text');
-        if (mobileThemeIcon) mobileThemeIcon.className = isDark ? 'fas fa-sun text-sm' : 'fas fa-moon text-sm';
-        if (mobileThemeText) mobileThemeText.textContent = isDark ? 'Light Mode' : 'Dark Mode';
+        if (mobileThemeIcon) mobileThemeIcon.className = isDark ? 'fas fa-moon text-sm' : 'fas fa-sun text-sm';
+        if (mobileThemeText) mobileThemeText.textContent = isDark ? 'Dark Mode' : 'Light Mode';
       }
 
       function toggleTheme() {

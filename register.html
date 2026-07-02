@@ -241,11 +241,11 @@
       function updateThemeIcons() {
         const isDark = html.classList.contains('dark');
         const themeIcon = document.getElementById('theme-icon');
-        if (themeIcon) themeIcon.className = isDark ? 'fas fa-sun text-sm' : 'fas fa-moon text-sm';
+        if (themeIcon) themeIcon.className = isDark ? 'fas fa-moon text-sm' : 'fas fa-sun text-sm';
         const mobileThemeIcon = document.getElementById('mobile-theme-icon');
         const mobileThemeText = document.getElementById('mobile-theme-text');
-        if (mobileThemeIcon) mobileThemeIcon.className = isDark ? 'fas fa-sun text-sm' : 'fas fa-moon text-sm';
-        if (mobileThemeText) mobileThemeText.textContent = isDark ? 'Light Mode' : 'Dark Mode';
+        if (mobileThemeIcon) mobileThemeIcon.className = isDark ? 'fas fa-moon text-sm' : 'fas fa-sun text-sm';
+        if (mobileThemeText) mobileThemeText.textContent = isDark ? 'Dark Mode' : 'Light Mode';
       }
 
       function toggleTheme() {

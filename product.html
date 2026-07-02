@@ -194,12 +194,14 @@
           <a href="contact.html" class="block py-4 border-b border-gray-200 dark:border-white/10 text-lead dark:text-white hover:text-amber transition duration-300 text-xs uppercase tracking-widest font-medium">Contact</a>
 
           <div class="pt-6 flex flex-col gap-4">
-            <a href="login.html" class="flex items-center justify-center w-full bg-transparent border-2 border-lead dark:border-white text-lead dark:text-white hover:border-amber hover:text-amber dark:hover:border-amber dark:hover:text-amber px-4 py-3 rounded-full font-medium uppercase tracking-widest text-xs transition duration-300">
-              Login
-            </a>
-            <a href="register.html" class="flex items-center justify-center w-full bg-amber text-black hover:bg-lead hover:text-white dark:hover:bg-white dark:hover:text-black px-4 py-3 rounded-full font-medium uppercase tracking-widest text-xs transition duration-300">
-              Register
-            </a>
+            <div class="grid grid-cols-2 gap-3">
+              <a href="login.html" class="flex items-center justify-center w-full bg-transparent border-2 border-lead dark:border-white text-lead dark:text-white hover:border-amber hover:text-amber dark:hover:border-amber dark:hover:text-amber px-2 py-3 rounded-full font-medium uppercase tracking-widest text-[11px] sm:text-xs transition duration-300">
+                Login
+              </a>
+              <a href="register.html" class="flex items-center justify-center w-full bg-amber text-black hover:bg-lead hover:text-white dark:hover:bg-white dark:hover:text-black px-2 py-3 rounded-full font-medium uppercase tracking-widest text-[11px] sm:text-xs transition duration-300">
+                Register
+              </a>
+            </div>
             
             <!-- Mobile Toggles -->
             <div class="flex items-center justify-center gap-4 pt-4 border-t border-gray-200 dark:border-white/10 mt-2">
@@ -722,16 +724,16 @@
         // Desktop icon
         const themeIcon = document.getElementById('theme-icon');
         if (themeIcon) {
-          themeIcon.className = isDark ? 'fas fa-sun text-sm' : 'fas fa-moon text-sm';
+          themeIcon.className = isDark ? 'fas fa-moon text-sm' : 'fas fa-sun text-sm';
         }
         // Mobile icon and text
         const mobileThemeIcon = document.getElementById('mobile-theme-icon');
         const mobileThemeText = document.getElementById('mobile-theme-text');
         if (mobileThemeIcon) {
-          mobileThemeIcon.className = isDark ? 'fas fa-sun text-sm' : 'fas fa-moon text-sm';
+          mobileThemeIcon.className = isDark ? 'fas fa-moon text-sm' : 'fas fa-sun text-sm';
         }
         if (mobileThemeText) {
-          mobileThemeText.textContent = isDark ? 'Light Mode' : 'Dark Mode';
+          mobileThemeText.textContent = isDark ? 'Dark Mode' : 'Light Mode';
         }
       }
 
