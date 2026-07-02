@@ -25,8 +25,14 @@
   </script>
 
   <style>
-    [dir="rtl"] { direction: rtl; }
-    
+    /* Critical fix for mobile/iPad horizontal overflow */
+    html, body {
+      max-width: 100vw;
+      overflow-x: hidden;
+      width: 100%;
+      position: relative;
+    }
+
     @keyframes fadeInUp {
       from { opacity: 0; transform: translateY(30px); }
       to { opacity: 1; transform: translateY(0); }
@@ -41,13 +47,60 @@
 <body class="font-sans antialiased transition-colors duration-300 bg-light-bg dark:bg-lead text-black dark:text-white flex flex-col min-h-screen overflow-x-hidden w-full">
 
   <!-- FLOATING GLASS NAVBAR -->
-  <div class="fixed top-4 left-0 right-0 z-50 px-4 sm:px-6 lg:px-8 flex justify-center pointer-events-none">
-    <nav class="w-full max-w-[1600px] bg-light-bg/80 dark:bg-lead/80 backdrop-blur-lg border border-gray-200 dark:border-amber/30 rounded-2xl lg:rounded-full shadow-2xl transition-colors duration-300 pointer-events-auto relative">
-      <div class="flex justify-between items-center h-[80px] px-8 xl:px-10">
+  <div class="fixed top-4 inset-x-0 z-50 px-4 sm:px-6 lg:px-8 flex justify-center pointer-events-none">
+    <nav class="w-full max-w-[1600px] bg-light-bg/80 dark:bg-lead/80 backdrop-blur-lg border border-gray-200 dark:border-amber/30 rounded-2xl xl:rounded-full shadow-2xl transition-colors duration-300 pointer-events-auto relative">
+      <div class="flex justify-between items-center h-[80px] px-4 xl:px-10">
 
         <!-- Logo -->
         <div class="flex-shrink-0 pr-2 xl:pr-4">
           <a href="index.html" class="flex items-center gap-3">
+            <svg class="w-8 h-8 md:w-10 md:h-10 filter drop-shadow-[0_2px_8px_rgba(245,158,11,0.15)] flex-shrink-0" viewBox="0 0 100 100" fill="none" xmlns="http://www.w3.org/2000/svg">
+              <defs>
+                <linearGradient id="logo-amber" x1="0%" y1="0%" x2="100%" y2="100%">
+                  <stop offset="0%" stop-color="#FBBF24" />
+                  <stop offset="100%" stop-color="#F59E0B" />
+                </linearGradient>
+                <linearGradient id="logo-coral" x1="0%" y1="0%" x2="100%" y2="100%">
+                  <stop offset="0%" stop-color="#F97316" />
+                  <stop offset="100%" stop-color="#EF4444" />
+                </linearGradient>
+                <linearGradient id="logo-rose" x1="0%" y1="0%" x2="100%" y2="100%">
+                  <stop offset="0%" stop-color="#EC4899" />
+                  <stop offset="100%" stop-color="#8B5CF6" />
+                </linearGradient>
+                <linearGradient id="logo-blue" x1="0%" y1="0%" x2="100%" y2="100%">
+                  <stop offset="0%" stop-color="#3B82F6" />
+                  <stop offset="100%" stop-color="#06B6D4" />
+                </linearGradient>
+                <linearGradient id="logo-teal" x1="0%" y1="0%" x2="100%" y2="100%">
+                  <stop offset="0%" stop-color="#0D9488" />
+                  <stop offset="100%" stop-color="#10B981" />
+                </linearGradient>
+                <linearGradient id="logo-purple" x1="0%" y1="0%" x2="100%" y2="100%">
+                  <stop offset="0%" stop-color="#8B5CF6" />
+                  <stop offset="100%" stop-color="#6366F1" />
+                </linearGradient>
+              </defs>
+              <polygon points="50,5 88,27 88,73 50,95 12,73 12,27" fill="none" stroke="#1E293B" stroke-width="3" stroke-linejoin="round" />
+              <polygon points="50,5 88,27 72,38" fill="url(#logo-blue)" stroke="#1E293B" stroke-width="1.5" stroke-linejoin="round" />
+              <polygon points="50,5 72,38 50,25" fill="url(#logo-teal)" stroke="#1E293B" stroke-width="1.5" stroke-linejoin="round" />
+              <polygon points="88,27 88,73 72,62" fill="url(#logo-purple)" stroke="#1E293B" stroke-width="1.5" stroke-linejoin="round" />
+              <polygon points="88,27 72,62 72,38" fill="url(#logo-blue)" stroke="#1E293B" stroke-width="1.5" stroke-linejoin="round" />
+              <polygon points="88,73 50,95 50,75" fill="url(#logo-teal)" stroke="#1E293B" stroke-width="1.5" stroke-linejoin="round" />
+              <polygon points="88,73 50,75 72,62" fill="url(#logo-purple)" stroke="#1E293B" stroke-width="1.5" stroke-linejoin="round" />
+              <polygon points="50,95 12,73 28,62" fill="url(#logo-blue)" stroke="#1E293B" stroke-width="1.5" stroke-linejoin="round" />
+              <polygon points="50,95 28,62 50,75" fill="url(#logo-teal)" stroke="#1E293B" stroke-width="1.5" stroke-linejoin="round" />
+              <polygon points="12,73 12,27 28,38" fill="url(#logo-purple)" stroke="#1E293B" stroke-width="1.5" stroke-linejoin="round" />
+              <polygon points="12,73 28,38 28,62" fill="url(#logo-blue)" stroke="#1E293B" stroke-width="1.5" stroke-linejoin="round" />
+              <polygon points="12,27 50,5 50,25" fill="url(#logo-teal)" stroke="#1E293B" stroke-width="1.5" stroke-linejoin="round" />
+              <polygon points="12,27 50,25 28,38" fill="url(#logo-purple)" stroke="#1E293B" stroke-width="1.5" stroke-linejoin="round" />
+              <polygon points="50,50 50,25 72,38" fill="url(#logo-amber)" stroke="#1E293B" stroke-width="1.5" stroke-linejoin="round" />
+              <polygon points="50,50 72,38 72,62" fill="url(#logo-coral)" stroke="#1E293B" stroke-width="1.5" stroke-linejoin="round" />
+              <polygon points="50,50 72,62 50,75" fill="url(#logo-rose)" stroke="#1E293B" stroke-width="1.5" stroke-linejoin="round" />
+              <polygon points="50,50 50,75 28,62" fill="url(#logo-rose)" stroke="#1E293B" stroke-width="1.5" stroke-linejoin="round" />
+              <polygon points="50,50 28,62 28,38" fill="url(#logo-coral)" stroke="#1E293B" stroke-width="1.5" stroke-linejoin="round" />
+              <polygon points="50,50 28,38 50,25" fill="url(#logo-amber)" stroke="#1E293B" stroke-width="1.5" stroke-linejoin="round" />
+            </svg>
             <div class="flex flex-col">
               <span class="text-lg xl:text-2xl font-semibold tracking-widest text-lead dark:text-white uppercase">Crystal<span class="text-amber">Mosaic</span></span>
             </div>
@@ -55,14 +108,14 @@
         </div>
 
         <!-- Desktop Menu -->
-        <div class="hidden lg:flex items-center justify-center flex-1">
+        <div class="hidden xl:flex items-center justify-center flex-1">
           <div class="flex items-center gap-0.5 xl:gap-2">
 
             <!-- Home Dropdown -->
             <div class="relative group h-[80px] flex items-center">
-              <a href="index.html" class="text-[9px] xl:text-[10px] uppercase tracking-[0.15em] font-medium text-lead dark:text-white hover:text-amber dark:hover:text-amber transition-colors flex items-center relative px-1.5 xl:px-3 py-2 rounded-full hover:bg-gray-100 dark:hover:bg-amber/10 whitespace-nowrap">
+              <a href="index.html" class="text-[9px] xl:text-[10px] uppercase tracking-wider xl:tracking-[0.15em] font-medium text-lead dark:text-white hover:text-amber dark:hover:text-amber transition-colors flex items-center relative px-1 lg:px-1.5 xl:px-3 py-2 rounded-full hover:bg-gray-100 dark:hover:bg-amber/10 whitespace-nowrap">
                 <span>Home</span>
-                <i class="fas fa-chevron-down text-[8px] ms-1.5 transition-transform duration-300 group-hover:rotate-180"></i>
+                <i class="fas fa-chevron-down text-[8px] ms-1 transition-transform duration-300 group-hover:rotate-180"></i>
               </a>
               <div class="absolute top-[70px] start-0 w-48 bg-light-bg dark:bg-lead border border-gray-200 dark:border-amber/20 shadow-2xl rounded-xl opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-300 z-50 overflow-hidden">
                 <div class="py-2 flex flex-col">
@@ -73,58 +126,50 @@
             </div>
 
             <!-- Standard Links -->
-            <a href="about.html" class="text-[9px] xl:text-[10px] uppercase tracking-[0.15em] font-semibold text-amber bg-gray-100 dark:bg-amber/10 transition-colors whitespace-nowrap px-1.5 xl:px-3 py-2 rounded-full">About</a>
-            <a href="gallery.html" class="text-[9px] xl:text-[10px] uppercase tracking-[0.15em] font-medium text-lead dark:text-white hover:text-amber dark:hover:text-amber transition-colors whitespace-nowrap px-1.5 xl:px-3 py-2 rounded-full hover:bg-gray-100 dark:hover:bg-amber/10">Gallery</a>
-            <a href="product.html" class="text-[9px] xl:text-[10px] uppercase tracking-[0.15em] font-medium text-lead dark:text-white hover:text-amber dark:hover:text-amber transition-colors whitespace-nowrap px-1.5 xl:px-3 py-2 rounded-full hover:bg-gray-100 dark:hover:bg-amber/10">Product</a>
-            <a href="restoration.html" class="text-[9px] xl:text-[10px] uppercase tracking-[0.15em] font-medium text-lead dark:text-white hover:text-amber dark:hover:text-amber transition-colors whitespace-nowrap px-1.5 xl:px-3 py-2 rounded-full hover:bg-gray-100 dark:hover:bg-amber/10">Restoration</a>
-            <a href="classes.html" class="text-[9px] xl:text-[10px] uppercase tracking-[0.15em] font-medium text-lead dark:text-white hover:text-amber dark:hover:text-amber transition-colors whitespace-nowrap px-1.5 xl:px-3 py-2 rounded-full hover:bg-gray-100 dark:hover:bg-amber/10">Classes</a>
-            <a href="workshop.html" class="text-[9px] xl:text-[10px] uppercase tracking-[0.15em] font-medium text-lead dark:text-white hover:text-amber dark:hover:text-amber transition-colors whitespace-nowrap px-1.5 xl:px-3 py-2 rounded-full hover:bg-gray-100 dark:hover:bg-amber/10">Workshop</a>
-            <a href="faq.html" class="text-[9px] xl:text-[10px] uppercase tracking-[0.15em] font-medium text-lead dark:text-white hover:text-amber dark:hover:text-amber transition-colors whitespace-nowrap px-1.5 xl:px-3 py-2 rounded-full hover:bg-gray-100 dark:hover:bg-amber/10">FAQ</a>
-            <a href="pricing.html" class="text-[9px] xl:text-[10px] uppercase tracking-[0.15em] font-medium text-lead dark:text-white hover:text-amber dark:hover:text-amber transition-colors whitespace-nowrap px-1.5 xl:px-3 py-2 rounded-full hover:bg-gray-100 dark:hover:bg-amber/10">Pricing</a>
-            <a href="contact.html" class="text-[9px] xl:text-[10px] uppercase tracking-[0.15em] font-medium text-lead dark:text-white hover:text-amber dark:hover:text-amber transition-colors whitespace-nowrap px-1.5 xl:px-3 py-2 rounded-full hover:bg-gray-100 dark:hover:bg-amber/10">Contact</a>
+            <a href="about.html" class="text-[9px] xl:text-[10px] uppercase tracking-wider xl:tracking-[0.15em] font-semibold text-amber bg-gray-100 dark:bg-amber/10 transition-colors whitespace-nowrap px-1 lg:px-1.5 xl:px-3 py-2 rounded-full">About</a>
+            <a href="gallery.html" class="text-[9px] xl:text-[10px] uppercase tracking-wider xl:tracking-[0.15em] font-medium text-lead dark:text-white hover:text-amber dark:hover:text-amber transition-colors whitespace-nowrap px-1 lg:px-1.5 xl:px-3 py-2 rounded-full hover:bg-gray-100 dark:hover:bg-amber/10">Gallery</a>
+            <a href="product.html" class="text-[9px] xl:text-[10px] uppercase tracking-wider xl:tracking-[0.15em] font-medium text-lead dark:text-white hover:text-amber dark:hover:text-amber transition-colors whitespace-nowrap px-1 lg:px-1.5 xl:px-3 py-2 rounded-full hover:bg-gray-100 dark:hover:bg-amber/10">Product</a>
+            <a href="restoration.html" class="text-[9px] xl:text-[10px] uppercase tracking-wider xl:tracking-[0.15em] font-medium text-lead dark:text-white hover:text-amber dark:hover:text-amber transition-colors whitespace-nowrap px-1 lg:px-1.5 xl:px-3 py-2 rounded-full hover:bg-gray-100 dark:hover:bg-amber/10">Restoration</a>
+            <a href="classes.html" class="text-[9px] xl:text-[10px] uppercase tracking-wider xl:tracking-[0.15em] font-medium text-lead dark:text-white hover:text-amber dark:hover:text-amber transition-colors whitespace-nowrap px-1 lg:px-1.5 xl:px-3 py-2 rounded-full hover:bg-gray-100 dark:hover:bg-amber/10">Classes</a>
+            <a href="workshop.html" class="text-[9px] xl:text-[10px] uppercase tracking-wider xl:tracking-[0.15em] font-medium text-lead dark:text-white hover:text-amber dark:hover:text-amber transition-colors whitespace-nowrap px-1 lg:px-1.5 xl:px-3 py-2 rounded-full hover:bg-gray-100 dark:hover:bg-amber/10">Workshop</a>
+            <a href="faq.html" class="text-[9px] xl:text-[10px] uppercase tracking-wider xl:tracking-[0.15em] font-medium text-lead dark:text-white hover:text-amber dark:hover:text-amber transition-colors whitespace-nowrap px-1 lg:px-1.5 xl:px-3 py-2 rounded-full hover:bg-gray-100 dark:hover:bg-amber/10">FAQ</a>
+            <a href="pricing.html" class="text-[9px] xl:text-[10px] uppercase tracking-wider xl:tracking-[0.15em] font-medium text-lead dark:text-white hover:text-amber dark:hover:text-amber transition-colors whitespace-nowrap px-1 lg:px-1.5 xl:px-3 py-2 rounded-full hover:bg-gray-100 dark:hover:bg-amber/10">Pricing</a>
+            <a href="contact.html" class="text-[9px] xl:text-[10px] uppercase tracking-wider xl:tracking-[0.15em] font-medium text-lead dark:text-white hover:text-amber dark:hover:text-amber transition-colors whitespace-nowrap px-1 lg:px-1.5 xl:px-3 py-2 rounded-full hover:bg-gray-100 dark:hover:bg-amber/10">Contact</a>
           </div>
         </div>
 
-        <!-- Desktop Actions & Toggles -->
-        <div class="hidden lg:flex items-center gap-1.5 xl:gap-3 flex-shrink-0">
-          <a href="login.html" class="border border-gray-300 dark:border-gray-600 text-lead dark:text-white hover:border-amber hover:text-amber px-4 xl:px-5 py-1.5 xl:py-2 rounded-full text-[9px] xl:text-[10px] uppercase tracking-wider font-medium transition-all duration-300">Login</a>
-          <a href="register.html" class="bg-amber text-black hover:bg-lead hover:text-white dark:hover:bg-white dark:hover:text-black px-4 xl:px-5 py-2 xl:py-2.5 rounded-full text-[9px] xl:text-[10px] uppercase tracking-wider font-medium transition-all duration-300">
-            Register
-          </a>
-
-          <div class="h-6 w-px bg-gray-300 dark:bg-gray-700 mx-1"></div>
-
-          <!-- Theme Toggle -->
-          <button id="theme-toggle" class="relative w-[56px] xl:w-[64px] h-[26px] xl:h-[30px] flex items-center bg-gray-200 dark:bg-[#1E293B] rounded-full p-1 transition-colors duration-300 focus:outline-none border border-gray-300 dark:border-gray-700 overflow-hidden" title="Toggle Theme">
-            <span class="text-[7px] xl:text-[8px] font-medium text-gray-500 absolute end-2.5 dark:opacity-0 transition-opacity duration-300 tracking-wider">LGT</span>
-            <span class="text-[7px] xl:text-[8px] font-medium text-amber absolute start-2.5 opacity-0 dark:opacity-100 transition-opacity duration-300 tracking-wider">DRK</span>
-            
-            <div class="w-[18px] xl:w-[20px] h-[18px] xl:h-[20px] bg-white dark:bg-lead border border-gray-200 dark:border-amber/50 rounded-full shadow-sm transform transition-transform duration-300 flex items-center justify-center rtl:dark:-translate-x-[30px] xl:rtl:dark:-translate-x-[34px] ltr:dark:translate-x-[30px] xl:ltr:dark:translate-x-[34px] dark:translate-x-[30px] xl:dark:translate-x-[34px] z-10">
-              <i class="fas fa-sun text-[8px] xl:text-[9px] text-amber dark:hidden block"></i>
-              <i class="fas fa-moon text-[8px] xl:text-[9px] text-amber hidden dark:block"></i>
-            </div>
-          </button>
+        <!-- Actions Group -->
+        <div class="flex items-center gap-1.5 xl:gap-2.5 flex-shrink-0">
           
-          <!-- RTL Toggle -->
-          <button id="rtl-toggle" class="text-[9px] xl:text-[10px] font-medium text-gray-500 hover:text-amber transition-colors duration-300 px-2 py-1 rounded-full hover:bg-gray-100 dark:hover:bg-amber/10" title="Toggle RTL">
-            RTL
-          </button>
-        </div>
+          <!-- Desktop Actions -->
+          <div class="hidden xl:flex items-center gap-1.5 xl:gap-2.5">
+            <a href="login.html" class="border border-gray-300 dark:border-gray-600 text-lead dark:text-white hover:border-amber hover:text-amber px-2.5 xl:px-4 py-1.5 xl:py-2 rounded-full text-[9px] xl:text-[10px] uppercase tracking-wider font-medium transition-all duration-300">Login</a>
+            <a href="register.html" class="bg-amber text-black hover:bg-lead hover:text-white dark:hover:bg-white dark:hover:text-black px-2.5 xl:px-4 py-2 xl:py-2.5 rounded-full text-[9px] xl:text-[10px] uppercase tracking-wider font-medium transition-all duration-300">Register</a>
+            <div class="h-6 w-px bg-gray-300 dark:bg-gray-700 mx-0.5"></div>
+            <!-- Dark/Light Toggle -->
+            <button id="theme-toggle" class="text-lead dark:text-white hover:text-amber focus:outline-none transition duration-300 bg-gray-100 dark:bg-amber/10 p-2 rounded-full" title="Toggle Light/Dark Mode">
+              <i class="fas fa-moon text-sm" id="theme-icon"></i>
+            </button>
+            <!-- RTL Toggle -->
+            <button id="rtl-toggle" class="text-lead dark:text-white hover:text-amber focus:outline-none transition duration-300 bg-gray-100 dark:bg-amber/10 p-2 rounded-full" title="Toggle RTL/LTR">
+              <i class="fas fa-exchange-alt text-sm"></i>
+            </button>
+          </div>
 
-        <!-- Mobile Menu Button -->
-        <div class="lg:hidden flex items-center">
-          <button id="mobile-menu-button" class="text-lead dark:text-white hover:text-amber focus:outline-none transition duration-300 bg-gray-100 dark:bg-amber/10 p-2 rounded-full">
+          <!-- Mobile Menu Hamburger -->
+          <button id="mobile-menu-button" class="xl:hidden text-lead dark:text-white hover:text-amber focus:outline-none transition duration-300 bg-gray-100 dark:bg-amber/10 p-2 rounded-full">
             <svg class="h-6 w-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
               <path id="menu-icon" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"></path>
               <path id="close-icon" class="hidden" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"></path>
             </svg>
           </button>
+
         </div>
 
       </div>
 
       <!-- Mobile Menu Dropdown -->
-      <div id="mobile-menu" class="hidden lg:hidden absolute top-[90px] left-0 right-0 bg-light-bg dark:bg-lead border border-gray-200 dark:border-amber/20 shadow-2xl rounded-2xl transition-colors duration-300 overflow-hidden">
+      <div id="mobile-menu" class="hidden xl:hidden absolute top-[90px] inset-x-0 bg-light-bg dark:bg-lead border border-gray-200 dark:border-amber/20 shadow-2xl rounded-2xl transition-colors duration-300 overflow-hidden">
         <div class="px-6 pt-4 pb-8 flex flex-col gap-0 max-h-[calc(100vh-120px)] overflow-y-auto hide-scroll">
 
           <!-- Mobile Home Dropdown -->
@@ -160,16 +205,15 @@
             <a href="register.html" class="flex items-center justify-center w-full bg-amber text-black hover:bg-lead hover:text-white dark:hover:bg-white dark:hover:text-black px-4 py-3 rounded-full font-medium uppercase tracking-widest text-xs transition duration-300">
               Register
             </a>
-            
-            <div class="flex justify-between items-center pt-6 pb-2 border-t border-gray-200 dark:border-white/10 mt-2">
-              <button id="mobile-theme-toggle" class="bg-gray-100 dark:bg-[#1a1a1a] border border-gray-300 dark:border-gray-700 rounded-full px-4 py-2 transition-colors flex items-center text-xs font-medium uppercase tracking-widest shadow-sm">
-                <span class="dark:hidden flex items-center text-amber"><i class="fas fa-sun me-2"></i> Light Mode</span>
-                <span class="hidden dark:flex items-center text-amber"><i class="fas fa-moon me-2"></i> Dark Mode</span>
+            <!-- Mobile Toggles -->
+            <div class="flex items-center justify-center gap-4 pt-4 border-t border-gray-200 dark:border-white/10 mt-2">
+              <button id="mobile-theme-toggle" class="flex items-center gap-2 text-lead dark:text-white hover:text-amber focus:outline-none transition duration-300 bg-gray-100 dark:bg-amber/10 px-4 py-2.5 rounded-full" title="Toggle Light/Dark Mode">
+                <i class="fas fa-moon text-sm" id="mobile-theme-icon"></i>
+                <span class="text-xs uppercase tracking-widest font-medium" id="mobile-theme-text">Light Mode</span>
               </button>
-              
-              <!-- CHANGED: Mobile RTL Toggle Icon (No text, styled as circular button) -->
-              <button id="mobile-rtl-toggle" class="bg-gray-100 dark:bg-[#1a1a1a] border border-gray-300 dark:border-gray-700 rounded-full w-10 h-10 flex items-center justify-center hover:border-amber dark:hover:border-amber transition-colors shadow-sm" title="Toggle RTL Direction">
-                <i class="fas fa-right-left text-amber text-sm"></i>
+              <button id="mobile-rtl-toggle" class="flex items-center gap-2 text-lead dark:text-white hover:text-amber focus:outline-none transition duration-300 bg-gray-100 dark:bg-amber/10 px-4 py-2.5 rounded-full" title="Toggle RTL/LTR">
+                <i class="fas fa-exchange-alt text-sm"></i>
+                <span class="text-xs uppercase tracking-widest font-medium">RTL</span>
               </button>
             </div>
           </div>
@@ -405,7 +449,7 @@
               Whether you want to commission a custom art piece for your home, restore a family heirloom, or learn to cut glass yourself, our studio doors are open.
             </p>
             <div class="flex flex-col sm:flex-row gap-4 justify-center">
-              <a href="classes.html" class="px-8 py-4 bg-amber text-black hover:bg-lead hover:text-white dark:hover:bg-white dark:hover:text-black font-medium uppercase tracking-widest text-xs transition-colors duration-300 rounded-full">
+              <a href="classes.html" class="px-8 py-4 bg-amber border-2 border-transparent text-black hover:bg-lead hover:text-white dark:hover:bg-white dark:hover:text-black font-medium uppercase tracking-widest text-xs transition-colors duration-300 rounded-full">
                 View Class Schedule
               </a>
               <a href="contact.html" class="px-8 py-4 border-2 border-gray-300 dark:border-white text-black dark:text-white hover:border-amber hover:text-amber dark:hover:border-amber dark:hover:text-amber font-medium uppercase tracking-widest text-xs transition-colors duration-300 rounded-full">
@@ -423,11 +467,60 @@
   <footer class="bg-lead text-white pt-24 pb-12 mt-auto border-t border-amber/30">
     <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
       
-      <div class="grid md:grid-cols-2 lg:grid-cols-4 gap-12 mb-16">
+      <div class="grid md:grid-cols-2 lg:grid-cols-5 gap-12 mb-16">
         
         <!-- Column 1: Logo & Info -->
-        <div>
-          <h3 class="text-3xl font-semibold tracking-widest uppercase mb-6 text-white">Crystal<span class="text-amber">Mosaic</span></h3>
+        <div class="md:col-span-2 lg:col-span-2">
+          <a href="index.html" class="flex items-center gap-3 mb-6 group">
+            <svg class="w-8 h-8 md:w-10 md:h-10 filter drop-shadow-[0_2px_8px_rgba(245,158,11,0.15)] flex-shrink-0" viewBox="0 0 100 100" fill="none" xmlns="http://www.w3.org/2000/svg">
+              <defs>
+                <linearGradient id="logo-footer-amber" x1="0%" y1="0%" x2="100%" y2="100%">
+                  <stop offset="0%" stop-color="#FBBF24" />
+                  <stop offset="100%" stop-color="#F59E0B" />
+                </linearGradient>
+                <linearGradient id="logo-footer-coral" x1="0%" y1="0%" x2="100%" y2="100%">
+                  <stop offset="0%" stop-color="#F97316" />
+                  <stop offset="100%" stop-color="#EF4444" />
+                </linearGradient>
+                <linearGradient id="logo-footer-rose" x1="0%" y1="0%" x2="100%" y2="100%">
+                  <stop offset="0%" stop-color="#EC4899" />
+                  <stop offset="100%" stop-color="#8B5CF6" />
+                </linearGradient>
+                <linearGradient id="logo-footer-blue" x1="0%" y1="0%" x2="100%" y2="100%">
+                  <stop offset="0%" stop-color="#3B82F6" />
+                  <stop offset="100%" stop-color="#06B6D4" />
+                </linearGradient>
+                <linearGradient id="logo-footer-teal" x1="0%" y1="0%" x2="100%" y2="100%">
+                  <stop offset="0%" stop-color="#0D9488" />
+                  <stop offset="100%" stop-color="#10B981" />
+                </linearGradient>
+                <linearGradient id="logo-footer-purple" x1="0%" y1="0%" x2="100%" y2="100%">
+                  <stop offset="0%" stop-color="#8B5CF6" />
+                  <stop offset="100%" stop-color="#6366F1" />
+                </linearGradient>
+              </defs>
+              <polygon points="50,5 88,27 88,73 50,95 12,73 12,27" fill="none" stroke="#1E293B" stroke-width="3" stroke-linejoin="round" />
+              <polygon points="50,5 88,27 72,38" fill="url(#logo-footer-blue)" stroke="#1E293B" stroke-width="1.5" stroke-linejoin="round" />
+              <polygon points="50,5 72,38 50,25" fill="url(#logo-footer-teal)" stroke="#1E293B" stroke-width="1.5" stroke-linejoin="round" />
+              <polygon points="88,27 88,73 72,62" fill="url(#logo-footer-purple)" stroke="#1E293B" stroke-width="1.5" stroke-linejoin="round" />
+              <polygon points="88,27 72,62 72,38" fill="url(#logo-footer-blue)" stroke="#1E293B" stroke-width="1.5" stroke-linejoin="round" />
+              <polygon points="88,73 50,95 50,75" fill="url(#logo-footer-teal)" stroke="#1E293B" stroke-width="1.5" stroke-linejoin="round" />
+              <polygon points="88,73 50,75 72,62" fill="url(#logo-footer-purple)" stroke="#1E293B" stroke-width="1.5" stroke-linejoin="round" />
+              <polygon points="50,95 12,73 28,62" fill="url(#logo-footer-blue)" stroke="#1E293B" stroke-width="1.5" stroke-linejoin="round" />
+              <polygon points="50,95 28,62 50,75" fill="url(#logo-footer-teal)" stroke="#1E293B" stroke-width="1.5" stroke-linejoin="round" />
+              <polygon points="12,73 12,27 28,38" fill="url(#logo-footer-purple)" stroke="#1E293B" stroke-width="1.5" stroke-linejoin="round" />
+              <polygon points="12,73 28,38 28,62" fill="url(#logo-footer-blue)" stroke="#1E293B" stroke-width="1.5" stroke-linejoin="round" />
+              <polygon points="12,27 50,5 50,25" fill="url(#logo-footer-teal)" stroke="#1E293B" stroke-width="1.5" stroke-linejoin="round" />
+              <polygon points="12,27 50,25 28,38" fill="url(#logo-footer-purple)" stroke="#1E293B" stroke-width="1.5" stroke-linejoin="round" />
+              <polygon points="50,50 50,25 72,38" fill="url(#logo-footer-amber)" stroke="#1E293B" stroke-width="1.5" stroke-linejoin="round" />
+              <polygon points="50,50 72,38 72,62" fill="url(#logo-footer-coral)" stroke="#1E293B" stroke-width="1.5" stroke-linejoin="round" />
+              <polygon points="50,50 72,62 50,75" fill="url(#logo-footer-rose)" stroke="#1E293B" stroke-width="1.5" stroke-linejoin="round" />
+              <polygon points="50,50 50,75 28,62" fill="url(#logo-footer-rose)" stroke="#1E293B" stroke-width="1.5" stroke-linejoin="round" />
+              <polygon points="50,50 28,62 28,38" fill="url(#logo-footer-coral)" stroke="#1E293B" stroke-width="1.5" stroke-linejoin="round" />
+              <polygon points="50,50 28,38 50,25" fill="url(#logo-footer-amber)" stroke="#1E293B" stroke-width="1.5" stroke-linejoin="round" />
+            </svg>
+            <h3 class="text-3xl font-semibold tracking-widest uppercase text-white group-hover:text-amber transition-colors">Crystal<span class="text-amber">Mosaic</span></h3>
+          </a>
           <p class="text-white/70 mb-8 font-medium leading-relaxed text-sm">
             Preserving history and creating luminous art through master stained glass restoration and professional studio workshops.
           </p>
@@ -504,42 +597,8 @@
   </footer>
 
   <script>
-    // Theme Toggle Functionality
-    const themeToggle = document.getElementById('theme-toggle');
-    const mobileThemeToggle = document.getElementById('mobile-theme-toggle');
     const html = document.documentElement;
-
-    function toggleTheme() {
-      if (html.classList.contains('dark')) {
-        html.classList.remove('dark');
-        localStorage.setItem('theme', 'light');
-      } else {
-        html.classList.add('dark');
-        localStorage.setItem('theme', 'dark');
-      }
-    }
-
-    if (themeToggle) themeToggle.addEventListener('click', toggleTheme);
-    if (mobileThemeToggle) mobileThemeToggle.addEventListener('click', toggleTheme);
     if (localStorage.getItem('theme') === 'light') html.classList.remove('dark');
-
-    // RTL Toggle Functionality
-    const rtlToggle = document.getElementById('rtl-toggle');
-    const mobileRtlToggle = document.getElementById('mobile-rtl-toggle');
-
-    function toggleRTL() {
-      if (html.getAttribute('dir') === 'rtl') {
-        html.removeAttribute('dir');
-        localStorage.setItem('direction', 'ltr');
-      } else {
-        html.setAttribute('dir', 'rtl');
-        localStorage.setItem('direction', 'rtl');
-      }
-    }
-
-    if (rtlToggle) rtlToggle.addEventListener('click', toggleRTL);
-    if (mobileRtlToggle) mobileRtlToggle.addEventListener('click', toggleRTL);
-    if (localStorage.getItem('direction') === 'rtl') html.setAttribute('dir', 'rtl');
 
     // Mobile Menu Toggle
     const mobileMenuButton = document.getElementById('mobile-menu-button');
@@ -582,6 +641,55 @@
     }
 
     setupMobileDropdown('mobile-home-dropdown', 'mobile-home-menu', 'mobile-home-icon');
+  </script>
+  <script>
+    // ===== Theme Toggle (Dark/Light) =====
+    (function() {
+      const html = document.documentElement;
+      const savedTheme = localStorage.getItem('theme');
+      if (savedTheme === 'light') { html.classList.remove('dark'); }
+      else { html.classList.add('dark'); }
+
+      function updateThemeIcons() {
+        const isDark = html.classList.contains('dark');
+        const themeIcon = document.getElementById('theme-icon');
+        if (themeIcon) themeIcon.className = isDark ? 'fas fa-sun text-sm' : 'fas fa-moon text-sm';
+        const mobileThemeIcon = document.getElementById('mobile-theme-icon');
+        const mobileThemeText = document.getElementById('mobile-theme-text');
+        if (mobileThemeIcon) mobileThemeIcon.className = isDark ? 'fas fa-sun text-sm' : 'fas fa-moon text-sm';
+        if (mobileThemeText) mobileThemeText.textContent = isDark ? 'Light Mode' : 'Dark Mode';
+      }
+
+      function toggleTheme() {
+        html.classList.toggle('dark');
+        localStorage.setItem('theme', html.classList.contains('dark') ? 'dark' : 'light');
+        updateThemeIcons();
+      }
+
+      const themeToggle = document.getElementById('theme-toggle');
+      if (themeToggle) themeToggle.addEventListener('click', toggleTheme);
+      const mobileThemeToggle = document.getElementById('mobile-theme-toggle');
+      if (mobileThemeToggle) mobileThemeToggle.addEventListener('click', toggleTheme);
+      updateThemeIcons();
+    })();
+
+    // ===== RTL Toggle =====
+    (function() {
+      const html = document.documentElement;
+      const savedDir = localStorage.getItem('dir');
+      if (savedDir === 'rtl') html.setAttribute('dir', 'rtl');
+
+      function toggleRTL() {
+        const isRTL = html.getAttribute('dir') === 'rtl';
+        if (isRTL) { html.removeAttribute('dir'); localStorage.setItem('dir', 'ltr'); }
+        else { html.setAttribute('dir', 'rtl'); localStorage.setItem('dir', 'rtl'); }
+      }
+
+      const rtlToggle = document.getElementById('rtl-toggle');
+      if (rtlToggle) rtlToggle.addEventListener('click', toggleRTL);
+      const mobileRtlToggle = document.getElementById('mobile-rtl-toggle');
+      if (mobileRtlToggle) mobileRtlToggle.addEventListener('click', toggleRTL);
+    })();
   </script>
 </body>
 </html>
